@@ -1,38 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="WaveLobby" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80b15312-69d3-4ca3-a0b0-26c858336599" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/commands/CMD_Admin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/commands/CMD_Nick.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/files/PlayerHeads.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_Admin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_Banner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_Boots.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_GadGets.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_Heads.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_LobbySwitcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_Navigator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_TeamHeads.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_UserMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_YTHeads.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/guimanager/GUI_Admin_Manager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/guimanager/GUI_Banner_Manager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/guimanager/GUI_Boots_Manager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/guimanager/GUI_GadGets_Manager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/guimanager/GUI_HeadsManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/guimanager/GUI_Heads_Manager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/guimanager/GUI_Manager_Back.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/guimanager/GUI_TeamHeads_Manager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/guimanager/GUI_YTHeads_Maanager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/WaveLobby.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/PermissionsEx_1_23_4.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/WaveLobby.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/WaveLobby.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/api/ItemAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/api/ItemAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/files/FileWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/files/FileWriter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/files/LobbyItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/files/LobbyItems.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/files/PermManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/files/PermManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_Banner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_Banner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_Boots.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_Boots.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_GadGets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_GadGets.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_Heads.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_Heads.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_LobbySwitcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_LobbySwitcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_Navigator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_Navigator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_TeamHeads.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_TeamHeads.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_UserMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_UserMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_YTHeads.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_YTHeads.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/manager/ScoreboardManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/manager/ScoreboardManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/utils/ItemBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/utils/ItemBuilder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +56,11 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../PermissionsEx-1.23.4.jar" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

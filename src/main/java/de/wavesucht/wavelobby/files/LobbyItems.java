@@ -37,19 +37,6 @@ public class LobbyItems {
         setValue("LobbySwitcher.Lobby.Premium.1", "&6▶ &5Premium-Lobby-1");
         setValue("LobbySwitcher.Lobby.Premium.2", "&6▶ &5Premium-Lobby-2");
 
-        // Navigator Name \\
-
-        setValue("Navigator.Spawn", "&6✪ &3Spawn &6✪");
-        setValue("Navigator.Game.1", "&6✪ &3Game 1 &6✪");
-        setValue("Navigator.Game.2", "&6✪ &3Game 2 &6✪");
-        setValue("Navigator.Game.3", "&6✪ &3Game 3 &6✪");
-        setValue("Navigator.Game.4", "&6✪ &3Game 4 &6✪");
-        setValue("Navigator.Game.Name.Spawn", "&3Spawn ");
-        setValue("Navigator.Game.Name.1", "&3BedWars ");
-        setValue("Navigator.Game.Name.2", "&3KnockIt");
-        setValue("Navigator.Game.Name.3", "&3Projekt X ");
-        setValue("Navigator.Game.Name.4", "&3User Wunsch ");
-
         // Gui Items Name \\
 
         setValue("Item.Hotbar.Name.HeadMenu", "&6✪ &3Heads Menu &6✪");

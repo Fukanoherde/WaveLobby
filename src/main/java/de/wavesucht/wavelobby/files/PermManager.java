@@ -7,17 +7,15 @@ public class PermManager {
     private static FileWriter fileWriter = new FileWriter(WaveLobby.getPlugin().getDataFolder().getPath(), "perm.yml");
     public static void  loadFile() {
 
-        setValue("Plugin.Entwickler", "LionGaming_95");
-        setValue("Sternchen_Permission", "wave.*");
-        setValue("Shop_Edit", "wave.shop.edit");
-        setValue("Achievement_Settings", "wave.achievement.edit");
-        setValue("Edit_System_Key", "wave.key.edit");
-        setValue("Send_Broadcast", "wave.broadcast");
-        setValue("Reload_System", "wave.system.reload");
-        setValue("Join_Full", "wave.join");
-        setValue("Kick_Ignore", "wave.kick.ignore");
-        setValue("Prefix", "wave.prefix");
-        setValue("SetWarp", "wave.setwarp");
+        setValue("Plugin.Entwickler", "Fredd_HD");
+        setValue("Perms.all", "lobby.*");
+        setValue("Perms.setspawn", "lobby.setspawn");
+        setValue("Perms.admin", "lobby.admin");
+        setValue("Perms.premium", "lobby.premium");
+        setValue("Perms.cc", "lobby.chat.clear");
+        setValue("Perms.build", "lobby.build");
+        setValue("Perms.entity", "lobby.entity");
+        setValue("Perms.inventory", "lobby.gm");
     }
 
     private static void setValue(String valuePath, String value){
@@ -27,7 +25,7 @@ public class PermManager {
         }
     }
 
-    public static String getString(String valuePath){
+    public static String getValue(String valuePath){
         return fileWriter.getString(valuePath);
     }
 }

@@ -42,7 +42,7 @@ public class ScoreboardManager {
         obj.getScore("§7§lDeine Coins:").setScore(10);
         obj.getScore("§l").setScore(8);
         obj.getScore("§7§lUnser Forum:").setScore(7);
-        obj.getScore("§b§lforum.wavesucht.de").setScore(6);
+        obj.getScore("§b§lwavesucht.de").setScore(6);
         obj.getScore("§l ").setScore(5);
         obj.getScore("§7§lDein Rang:").setScore(4);
         if (PermissionsEx.getUser(p.getName()).inGroup("Owner")) {
@@ -81,8 +81,8 @@ public class ScoreboardManager {
             obj.getScore("§8§lSpieler").setScore(3);
         }
         obj.getScore("§l  ").setScore(2);
-        obj.getScore("§7§lDiscord:").setScore(1);
-        obj.getScore("§b§ldiscord.aniheaven.net/").setScore(0);
+        obj.getScore("§7§lTeamSpeak:").setScore(1);
+        obj.getScore("§b§lts.wavesucht.de").setScore(0);
 
         p.setScoreboard(board);
 

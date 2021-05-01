@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="WaveLobby">
+    <output-path>$PROJECT_DIR$/out/artifacts/WaveLobby</output-path>
+    <root id="archive" name="WaveLobby.jar">
+      <element id="module-output" name="WaveLobby" />
+    </root>
+  </artifact>
+</component>

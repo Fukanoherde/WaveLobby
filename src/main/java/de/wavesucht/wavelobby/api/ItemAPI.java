@@ -6,10 +6,12 @@ Created by LionGaming_95
 
  */
 
+import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 
 public class ItemAPI {
@@ -38,5 +40,15 @@ public class ItemAPI {
         meta.setDisplayName(DisplayName);
         item.setItemMeta(meta);
         return item;
+    }
+
+    public static ItemStack createBootsWithName(Color color, String name){
+        ItemStack itemStack = new ItemStack(Material.LEATHER_BOOTS, 1);
+        LeatherArmorMeta leatherArmorMeta = (LeatherArmorMeta) itemStack.getItemMeta();
+        leatherArmorMeta.setDisplayName(name);
+        leatherArmorMeta.setColor(color);
+        itemStack.setItemMeta(leatherArmorMeta);
+
+        return itemStack;
     }
 }

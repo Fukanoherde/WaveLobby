@@ -16,6 +16,12 @@ import org.bukkit.inventory.Inventory;
 
 public class GUI_Banner implements Listener {
 
+    private WaveLobby plugin;
+    public GUI_Banner (WaveLobby plugin) {
+        this.plugin = plugin;
+        Bukkit.getPluginManager().registerEvents(this, plugin);
+    }
+
     // onCreateBannerInv \\
 
     @EventHandler
