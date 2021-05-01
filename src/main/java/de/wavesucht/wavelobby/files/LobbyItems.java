@@ -7,7 +7,7 @@ public class LobbyItems {
     private static FileWriter fileWriter = new FileWriter(WaveLobby.getPlugin().getDataFolder().getPath(), "items.yml");
     public static void  loadFile() {
 
-        setValue("Plugin.Entwickler", "Fredd_HD and PsychoGamer_95");
+        setValue("Plugin.Entwickler", "LionGaming_95");
         setValue("Info.Slot", "0 1 2 3 4 5 6 7 8");
 
         // Navigator Name \\
