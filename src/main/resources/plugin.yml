@@ -1,0 +1,15 @@
+name: WaveLobby
+author: LionGaming_95
+version: 0.1
+main: de.wavesucht.wavelobby.WaveLobby
+commands:
+  allow:
+    description: Set a Player the permission for OP Permissions.
+  chatclear:
+    aliases:
+      - cc
+    description: Clear the server Chat.
+  build:
+    description: You change in build mode.
+  setwaro:
+    description: Set the minigame Warp.
