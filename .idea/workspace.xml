@@ -7,6 +7,7 @@
     <list default="true" id="80b15312-69d3-4ca3-a0b0-26c858336599" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/commands/CMD_Admin.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/commands/CMD_Nick.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/files/PlayerHeads.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/files/FileWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/files/FileWriter.java" afterDir="false" />
