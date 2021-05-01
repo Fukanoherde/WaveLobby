@@ -1,4 +1,292 @@
 package de.wavesucht.wavelobby.gui;
 
-public class GUI_Navigator {
+import de.wavesucht.wavelobby.WaveLobby;
+import de.wavesucht.wavelobby.api.ItemAPI;
+import de.wavesucht.wavelobby.manager.WarpManager;
+import org.bukkit.Bukkit;
+import org.bukkit.GameMode;
+import org.bukkit.Material;
+import org.bukkit.Sound;
+import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
+import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.SkullMeta;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
+
+public class GUI_Navigator implements Listener {
+
+    private WaveLobby plugin;
+    public GUI_Navigator (WaveLobby plugin) {
+        this.plugin = plugin;
+        Bukkit.getPluginManager().registerEvents(this, plugin);
+    }
+    @EventHandler
+    public void onNavigator(PlayerInteractEvent e) {
+        ItemStack Freunde = new ItemStack(Material.SKULL_ITEM, 1, (short)3);
+        SkullMeta FreundeMeta = (SkullMeta)Freunde.getItemMeta();
+        FreundeMeta.setOwner(e.getPlayer().getName());
+        FreundeMeta.setDisplayName("§6✪ §3Community §6✪");
+        Freunde.setItemMeta(FreundeMeta);
+
+        if (e.getAction() == Action.RIGHT_CLICK_AIR && e.getPlayer().getItemInHand().getType() == Material.COMPASS) {
+                if (e.getPlayer().getGameMode() != GameMode.CREATIVE) {
+                    final Inventory navigator = Bukkit.createInventory(null, 27, "§6✪ §3Wo Willst du Hinreisen? §6✪");
+                    Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
+
+                        @Override
+                        public void run() {
+                            navigator.setItem(2, ItemAPI.createjoinItem(Material.STICK, 1, 0, "§6✪ §3KnockBackFFA §6✪", Enchantment.LURE, 1));
+                            e.getPlayer().playSound(e.getPlayer().getLocation(), Sound.CLICK, 1, 1);
+                        }
+                    }, 2L);
+                    Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
+
+                        @Override
+                        public void run() {
+                            navigator.setItem(6, ItemAPI.createjoinItem(Material.DIAMOND, 1, 0, "§6✪ §3Creative §6✪", Enchantment.LURE, 1));
+                            e.getPlayer().playSound(e.getPlayer().getLocation(), Sound.CLICK, 1, 1);
+                        }
+                    }, 4L);
+                    Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
+
+                        @Override
+                        public void run() {
+                            navigator.setItem(10, Freunde);
+                            e.getPlayer().playSound(e.getPlayer().getLocation(), Sound.CLICK, 1, 1);
+                        }
+                    }, 6L);
+                    Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
+
+                        @Override
+                        public void run() {
+                            navigator.setItem(12, ItemAPI.createjoinItem(Material.DIAMOND_SWORD, 1, 0, "§6✪ §3PvP §6✪", Enchantment.LURE, 1));
+                            e.getPlayer().playSound(e.getPlayer().getLocation(), Sound.CLICK, 1, 1);
+                        }
+                    }, 8L);
+                    Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
+
+                        @Override
+                        public void run() {
+                            navigator.setItem(13, ItemAPI.createjoinItem(Material.DIAMOND_PICKAXE, 1, 0, "§6✪ §3DullyMiner §6✪", Enchantment.LURE, 1));
+                            e.getPlayer().playSound(e.getPlayer().getLocation(), Sound.CLICK, 1, 1);
+                        }
+                    }, 10L);
+                    Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
+
+                        @Override
+                        public void run() {
+                            navigator.setItem(14, ItemAPI.createjoinItem(Material.NETHER_BRICK, 1, 0, "§6✪ §3BedWars §6✪", Enchantment.LURE, 1));
+                            e.getPlayer().playSound(e.getPlayer().getLocation(), Sound.CLICK, 1, 1);
+                        }
+                    }, 12L);
+                    Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
+
+                        @Override
+                        public void run() {
+                            navigator.setItem(16, ItemAPI.createjoinItem(Material.REDSTONE_TORCH_ON, 1, 0, "§6✪ §3Spawn §6✪", Enchantment.LURE, 1));
+                            e.getPlayer().playSound(e.getPlayer().getLocation(), Sound.CLICK, 1, 1);
+                        }
+                    }, 14L);
+                    Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
+
+                        @Override
+                        public void run() {
+                            navigator.setItem(20, ItemAPI.createjoinItem(Material.SAPLING, 1, 0, "§6✪ §3Überleben §6✪", Enchantment.LURE, 1));
+                            e.getPlayer().playSound(e.getPlayer().getLocation(), Sound.CLICK, 1, 1);
+                        }
+                    }, 16L);
+                    Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
+
+                        @Override
+                        public void run() {
+                            navigator.setItem(24, ItemAPI.createjoinItem(Material.DIAMOND_SPADE, 1, 0, "§6✪ §3Spleef §6✪", Enchantment.LURE, 1));
+                            e.getPlayer().playSound(e.getPlayer().getLocation(), Sound.CLICK, 1, 1);
+                        }
+                    }, 18L);
+                    e.getPlayer().openInventory(navigator);
+                }
+            }
+    }
+    @EventHandler
+    public void onNavigatorTeleport(InventoryClickEvent e) {
+        if (e.getClickedInventory() != null) {
+            if (e.getView().getTitle().equalsIgnoreCase("§6✪ §3Wo Willst du Hinreisen? §6✪")) {
+                Player p = (Player) e.getWhoClicked();
+                if (e.getCurrentItem() != null) {
+                    if (e.getCurrentItem().getType() != Material.AIR) {
+                        Material material = e.getCurrentItem().getType();
+
+                        if (material == Material.STICK) {
+                            if (WarpManager.isWarpExist("KnockBackFFA")) {
+                                WarpManager.teleportToWarp(p, "KnockBackFFA");
+                                p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 20, 20));
+                                p.sendMessage(plugin.Prefix + "§2Du hast dich erfolgreich zum Warp: §aKnockBackFFA §2Teleportiert");
+                            } else {
+                                p.sendMessage(plugin.Prefix + "§4KnockBackFFA: §cnicht gefunden. §4Bitte gebe einen Teammitglied Bescheid!");
+                            }
+                        }
+                    }
+                }
+            }
+            if (e.getView().getTitle().equalsIgnoreCase("§6✪ §3Wo Willst du Hinreisen? §6✪")) {
+                Player p = (Player) e.getWhoClicked();
+                if (e.getCurrentItem() != null) {
+                    if (e.getCurrentItem().getType() != Material.AIR) {
+                        Material material = e.getCurrentItem().getType();
+
+                        if (material == Material.DIAMOND) {
+                            p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 50, 20));
+                            if (WarpManager.isWarpExist("Creative")) {
+                                WarpManager.teleportToWarp(p, "Creative");
+                                p.sendMessage(plugin.Prefix + "§2Du hast dich erfolgreich zum Warp: §aCreative §2Teleportiert");
+                                p.removePotionEffect(PotionEffectType.BLINDNESS);
+                            } else {
+                                p.sendMessage(plugin.Prefix + "§4Creative: §cnicht gefunden. §4Bitte gebe einen Teammitglied Bescheid!");
+                            }
+                        }
+                    }
+                }
+            }
+            if (e.getView().getTitle().equalsIgnoreCase("§6✪ §3Wo Willst du Hinreisen? §6✪")) {
+                Player p = (Player) e.getWhoClicked();
+                if (e.getCurrentItem() != null) {
+                    if (e.getCurrentItem().getType() != Material.AIR) {
+                        Material material = e.getCurrentItem().getType();
+
+                        if (material == Material.SKULL_ITEM) {
+                            p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 50, 20));
+                            if (WarpManager.isWarpExist("Community")) {
+                                WarpManager.teleportToWarp(p, "Community");
+                                p.sendMessage(plugin.Prefix + "§2Du hast dich erfolgreich zum Warp: §aCommunity §2Teleportiert");
+                                p.removePotionEffect(PotionEffectType.BLINDNESS);
+                            } else {
+                                p.sendMessage(plugin.Prefix + "§4Community: §cnicht gefunden. §4Bitte gebe einen Teammitglied Bescheid!");
+                            }
+                        }
+                    }
+                }
+            }
+            if (e.getView().getTitle().equalsIgnoreCase("§6✪ §3Wo Willst du Hinreisen? §6✪")) {
+                Player p = (Player) e.getWhoClicked();
+                if (e.getCurrentItem() != null) {
+                    if (e.getCurrentItem().getType() != Material.AIR) {
+                        Material material = e.getCurrentItem().getType();
+
+                        if (material == Material.DIAMOND_SWORD) {
+                            p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 50, 20));
+                            if (WarpManager.isWarpExist("PvP")) {
+                                WarpManager.teleportToWarp(p, "PvP");
+                                p.sendMessage(plugin.Prefix + "§2Du hast dich erfolgreich zum Warp: §aPvP §2Teleportiert");
+                                p.removePotionEffect(PotionEffectType.BLINDNESS);
+                            } else {
+                                p.sendMessage(plugin.Prefix + "§4PvP: §cnicht gefunden. §4Bitte gebe einen Teammitglied Bescheid!");
+                            }
+                        }
+                    }
+                }
+            }
+            if (e.getView().getTitle().equalsIgnoreCase("§6✪ §3Wo Willst du Hinreisen? §6✪")) {
+                Player p = (Player) e.getWhoClicked();
+                if (e.getCurrentItem() != null) {
+                    if (e.getCurrentItem().getType() != Material.AIR) {
+                        Material material = e.getCurrentItem().getType();
+
+                        if (material == Material.DIAMOND_PICKAXE) {
+                            p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 50, 20));
+                            if (WarpManager.isWarpExist("DullyMiner")) {
+                                WarpManager.teleportToWarp(p, "DullyMiner");
+                                p.sendMessage(plugin.Prefix + "§2Du hast dich erfolgreich zum Warp: §aDullyMiner §2Teleportiert");
+                                p.removePotionEffect(PotionEffectType.BLINDNESS);
+                            } else {
+                                p.sendMessage(plugin.Prefix + "§4DullyMiner: §cnicht gefunden. §4Bitte gebe einen Teammitglied Bescheid!");
+                            }
+                        }
+                    }
+                }
+            }
+            if (e.getView().getTitle().equalsIgnoreCase("§6✪ §3Wo Willst du Hinreisen? §6✪")) {
+                Player p = (Player) e.getWhoClicked();
+                if (e.getCurrentItem() != null) {
+                    if (e.getCurrentItem().getType() != Material.AIR) {
+                        Material material = e.getCurrentItem().getType();
+
+                        if (material == Material.NETHER_BRICK) {
+                            p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 50, 20));
+                            if (WarpManager.isWarpExist("BedWars")) {
+                                WarpManager.teleportToWarp(p, "BedWars");
+                                p.sendMessage(plugin.Prefix + "§2Du hast dich erfolgreich zum Warp: §aBedWars §2Teleportiert");
+                                p.removePotionEffect(PotionEffectType.BLINDNESS);
+                            } else {
+                                p.sendMessage(plugin.Prefix + "§4BedWars: §cnicht gefunden. §4Bitte gebe einen Teammitglied Bescheid!");
+                            }
+                        }
+                    }
+                }
+            }
+            if (e.getView().getTitle().equalsIgnoreCase("§6✪ §3Wo Willst du Hinreisen? §6✪")) {
+                Player p = (Player) e.getWhoClicked();
+                if (e.getCurrentItem() != null) {
+                    if (e.getCurrentItem().getType() != Material.AIR) {
+                        Material material = e.getCurrentItem().getType();
+
+                        if (material == Material.REDSTONE_TORCH_ON) {
+                            p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 50, 20));
+                            if (WarpManager.isWarpExist("Spawn")) {
+                                WarpManager.teleportToWarp(p, "Spawn");
+                                p.sendMessage(plugin.Prefix + "§2Du hast dich erfolgreich zum Warp: §aSpawn §2Teleportiert");
+                                p.removePotionEffect(PotionEffectType.BLINDNESS);
+                            } else {
+                                p.sendMessage(plugin.Prefix + "§4Spawn: §cnicht gefunden. §4Bitte gebe einen Teammitglied Bescheid!");
+                            }
+                        }
+                    }
+                }
+            }
+            if (e.getView().getTitle().equalsIgnoreCase("§6✪ §3Wo Willst du Hinreisen? §6✪")) {
+                Player p = (Player) e.getWhoClicked();
+                if (e.getCurrentItem() != null) {
+                    if (e.getCurrentItem().getType() != Material.AIR) {
+                        Material material = e.getCurrentItem().getType();
+
+                        if (material == Material.SAPLING) {
+                            p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 50, 20));
+                            if (WarpManager.isWarpExist("Überleben")) {
+                                WarpManager.teleportToWarp(p, "Überleben");
+                                p.sendMessage(plugin.Prefix + "§2Du hast dich erfolgreich zum Warp: §aÜberleben §2Teleportiert");
+                                p.removePotionEffect(PotionEffectType.BLINDNESS);
+                            } else {
+                                p.sendMessage(plugin.Prefix + "§4Überleben: §cnicht gefunden. §4Bitte gebe einen Teammitglied Bescheid!");
+                            }
+                        }
+                    }
+                }
+            }
+            if (e.getView().getTitle().equalsIgnoreCase("§6✪ §3Wo Willst du Hinreisen? §6✪")) {
+                Player p = (Player) e.getWhoClicked();
+                if (e.getCurrentItem() != null) {
+                    if (e.getCurrentItem().getType() != Material.AIR) {
+                        Material material = e.getCurrentItem().getType();
+
+                        if (material == Material.DIAMOND_SPADE) {
+                            p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 50, 20));
+                            if (WarpManager.isWarpExist("Spleef")) {
+                                WarpManager.teleportToWarp(p, "Spleef");
+                                p.sendMessage(plugin.Prefix + "§2Du hast dich erfolgreich zum Warp: §aSpleef §2Teleportiert");
+                                p.removePotionEffect(PotionEffectType.BLINDNESS);
+                            } else {
+                                p.sendMessage(plugin.Prefix + "§4Spleef: §cnicht gefunden. §4Bitte gebe einen Teammitglied Bescheid!");
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

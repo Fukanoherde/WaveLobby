@@ -11,6 +11,10 @@ import de.wavesucht.wavelobby.commands.CMD_Build;
 import de.wavesucht.wavelobby.commands.CMD_ChatClear;
 import de.wavesucht.wavelobby.commands.CMD_SetWarp;
 import de.wavesucht.wavelobby.database.MySQL;
+import de.wavesucht.wavelobby.files.LobbyItems;
+import de.wavesucht.wavelobby.files.PermManager;
+import de.wavesucht.wavelobby.files.PlayerHeads;
+import de.wavesucht.wavelobby.gui.*;
 import de.wavesucht.wavelobby.listener.BlockManager;
 import de.wavesucht.wavelobby.listener.LoginManager;
 import de.wavesucht.wavelobby.listener.PlayerHider;
@@ -41,6 +45,18 @@ public class WaveLobby extends JavaPlugin {
     private PlayerManager player;
     private BlockManager blockManager;
     private PlayerHider playerHider;
+
+    // gui \\
+
+    private GUI_Banner banner;
+    private GUI_Navigator navigator;
+    private GUI_Boots boots;
+    private GUI_GadGets gadGets;
+    private GUI_Heads heads;
+    private GUI_LobbySwitcher lobbySwitcher;
+    private GUI_TeamHeads teamHeads;
+    private GUI_UserMenu userMenu;
+    private GUI_YTHeads ytHeads;
 
     // Utils \\
 
@@ -97,6 +113,10 @@ public class WaveLobby extends JavaPlugin {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        PermManager.loadFile();
+        LobbyItems.loadFile();
+        PlayerHeads.loadFile();
     }
 
     private void enableDatabase () {
@@ -113,6 +133,18 @@ public class WaveLobby extends JavaPlugin {
         this.player = new PlayerManager(this);
         this.blockManager = new BlockManager(this);
         this.playerHider = new PlayerHider(this);
+
+        // gui \\
+
+        this.banner = new GUI_Banner(this);
+        this.navigator = new GUI_Navigator(this);
+        this.boots = new GUI_Boots(this);
+        this.gadGets = new GUI_GadGets(this);
+        this.heads = new GUI_Heads(this);
+        this.lobbySwitcher = new GUI_LobbySwitcher(this);
+        this.teamHeads = new GUI_TeamHeads(this);
+        this.userMenu = new GUI_UserMenu(this);
+        this.ytHeads = new GUI_YTHeads(this);
 
     }
 
