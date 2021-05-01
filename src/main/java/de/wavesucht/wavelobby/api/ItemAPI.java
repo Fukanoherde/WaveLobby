@@ -31,4 +31,12 @@ public class ItemAPI {
         skullmeta.setDisplayName(name);
         return skull;
     }
+    public static ItemStack createItemNoEnch2(Material mat, int amount, int shortid, String DisplayName) {
+        short s = (short) shortid;
+        ItemStack item = new ItemStack(mat, amount, s, (byte) s);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName(DisplayName);
+        item.setItemMeta(meta);
+        return item;
+    }
 }
