@@ -8,8 +8,28 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/commands/CMD_Admin.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/commands/CMD_Nick.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/files/PlayerHeads.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_Admin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_Banner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_Boots.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_GadGets.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_Heads.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_LobbySwitcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_Navigator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_TeamHeads.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_UserMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_YTHeads.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/guimanager/GUI_Admin_Manager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/guimanager/GUI_Banner_Manager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/guimanager/GUI_Boots_Manager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/guimanager/GUI_GadGets_Manager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/guimanager/GUI_HeadsManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/guimanager/GUI_Heads_Manager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/guimanager/GUI_Manager_Back.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/guimanager/GUI_TeamHeads_Manager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/guimanager/GUI_YTHeads_Maanager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/api/ItemAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/api/ItemAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/files/FileWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/files/FileWriter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/files/LobbyItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/files/LobbyItems.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/files/PermManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/files/PermManager.java" afterDir="false" />
