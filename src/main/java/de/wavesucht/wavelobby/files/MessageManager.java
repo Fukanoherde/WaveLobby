@@ -4,7 +4,7 @@ import de.wavesucht.wavelobby.WaveLobby;
 
 public class MessageManager {
 
-    private static FileWriter fileWriter = new FileWriter(WaveLobby.getPlugin().getDataFolder().getPath(), "perm.yml");
+    private static FileWriter fileWriter = new FileWriter(WaveLobby.getPlugin().getDataFolder().getPath(), "messages.yml");
     public static void  loadFile() {
 
         setValue("Plugin.Entwickler", "LionGaming_95");
