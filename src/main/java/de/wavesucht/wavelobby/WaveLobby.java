@@ -17,10 +17,7 @@ import de.wavesucht.wavelobby.files.PermManager;
 import de.wavesucht.wavelobby.files.PlayerHeads;
 import de.wavesucht.wavelobby.gui.*;
 import de.wavesucht.wavelobby.guimanager.*;
-import de.wavesucht.wavelobby.listener.BlockManager;
-import de.wavesucht.wavelobby.listener.LoginManager;
-import de.wavesucht.wavelobby.listener.PlayerHider;
-import de.wavesucht.wavelobby.listener.PlayerManager;
+import de.wavesucht.wavelobby.listener.*;
 import de.wavesucht.wavelobby.manager.WarpManager;
 
 import org.bukkit.Bukkit;
@@ -31,6 +28,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class WaveLobby extends JavaPlugin {
 
@@ -47,6 +45,10 @@ public class WaveLobby extends JavaPlugin {
     private PlayerManager player;
     private BlockManager blockManager;
     private PlayerHider playerHider;
+    private BootsManager bootsManager;
+    private InventoryManager inventoryManager;
+    private JumpManager jumpManager;
+    private ChatManager chatManager;
 
     // gui \\
 
@@ -75,6 +77,7 @@ public class WaveLobby extends JavaPlugin {
     public static WaveLobby plugin;
     public static ArrayList<Player> build = new ArrayList<>();
     public static ArrayList<Player> PlayerHider = new ArrayList<>();
+    public static HashMap<String, Long> delay = new HashMap<String, Long>();
 
     @Override
     public void onEnable() {
@@ -145,6 +148,10 @@ public class WaveLobby extends JavaPlugin {
         this.player = new PlayerManager(this);
         this.blockManager = new BlockManager(this);
         this.playerHider = new PlayerHider(this);
+        this.bootsManager = new BootsManager(this);
+        this.inventoryManager = new InventoryManager(this);
+        this.jumpManager = new JumpManager(this);
+        this.chatManager = new ChatManager(this);
 
         // gui \\
 
