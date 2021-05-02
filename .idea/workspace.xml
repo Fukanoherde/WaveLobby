@@ -10,24 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80b15312-69d3-4ca3-a0b0-26c858336599" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/WaveLobby.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/PermissionsEx_1_23_4.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/WaveLobby.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/WaveLobby.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/api/ItemAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/api/ItemAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/files/LobbyItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/files/LobbyItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/commands/CMD_AllowOP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/commands/CMD_AllowOP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/commands/CMD_Build.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/commands/CMD_Build.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/commands/CMD_ChatClear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/commands/CMD_ChatClear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/commands/CMD_SetWarp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/commands/CMD_SetWarp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/files/MessageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/files/MessageManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/files/PermManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/files/PermManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_Banner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_Banner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_Boots.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_Boots.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_GadGets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_GadGets.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_Heads.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_Heads.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_LobbySwitcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_LobbySwitcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_Navigator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_Navigator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_TeamHeads.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_TeamHeads.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_UserMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_UserMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_YTHeads.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_YTHeads.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/manager/ScoreboardManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/manager/ScoreboardManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/utils/ItemBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/utils/ItemBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/listener/PlayerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/listener/PlayerManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +74,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

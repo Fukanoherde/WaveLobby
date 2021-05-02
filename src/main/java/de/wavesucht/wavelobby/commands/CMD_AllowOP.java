@@ -8,6 +8,7 @@ Created by LionGaming_95
 
 import de.wavesucht.wavelobby.WaveLobby;
 import de.wavesucht.wavelobby.api.AllowOP;
+import de.wavesucht.wavelobby.files.MessageManager;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
@@ -31,7 +32,7 @@ public class CMD_AllowOP implements CommandExecutor {
             Player p = (Player) sender;
             if (PermissionsEx.getUser(p).inGroup("Owner")) {
                 if (args.length == 0) {
-                    p.sendMessage(plugin.Prefix + "§3Verwendung: §7/allow op <Spieler> [true | false]");
+                    p.sendMessage(plugin.Prefix + MessageManager.getValue("Message.Use").toString().replaceFirst("", ""));
                     return true;
                 }
                 if (args[0].equalsIgnoreCase("op")) {
@@ -40,27 +41,33 @@ public class CMD_AllowOP implements CommandExecutor {
                         if (args[2].equalsIgnoreCase("true")) {
                             if (AllowOP.playerExists(target.getUniqueId().toString())) {
                                 AllowOP.setOpPerm(target.getUniqueId().toString(), target.getName(), Integer.valueOf(1));
-                                p.sendMessage(plugin.Prefix + "§aDu hast dem Spieler §6" + target.getName() + " §adie Erlaubnis gegeben, Op zu besitzen");
+                                String TargetNameAdd = MessageManager.getValue("");
+                                TargetNameAdd = TargetNameAdd.replaceAll("%target%", target.getName());
+                                p.sendMessage(plugin.Prefix + TargetNameAdd.toString().replaceFirst("&", "§"));
                             } else {
-                                p.sendMessage(plugin.Prefix + "§cDieser Spieler war noch nie auf diesen Server");
+                                p.sendMessage(plugin.Prefix + MessageManager.getValue("Message.PlayerNotFound").toString().replaceFirst("&", "§"));
                             }
                         } else if (args[2].equalsIgnoreCase("false")) {
                             if (AllowOP.playerExists(target.getUniqueId().toString())) {
                                 AllowOP.setOpPerm(target.getUniqueId().toString(), target.getName(), Integer.valueOf(0));
-                                p.sendMessage(plugin.Prefix + "§aDu hast dem Spieler §6" + target.getName() + " §adie Erlaubnis Op zu besitzen §centzogen");
+                                String TargetNameRemove = MessageManager.getValue("");
+                                TargetNameRemove = TargetNameRemove.replaceAll("%target%", target.getName());
+                                p.sendMessage(plugin.Prefix + TargetNameRemove.toString().replaceFirst("&", "§"));
                             } else {
-                                p.sendMessage(plugin.Prefix + "§cDieser Spieler war noch nie auf diesen Server");
+                                p.sendMessage(plugin.Prefix + MessageManager.getValue("Message.PlayerNotFound").toString().replaceFirst("&", "§"));
                             }
                         } else if ((!args[2].equalsIgnoreCase("true")) && (!args[2].equalsIgnoreCase("false"))) {
-                            p.sendMessage(plugin.Prefix + "§3Verwendung: §7/allow op <Spieler> [true | false]");
+                            p.sendMessage(plugin.Prefix + MessageManager.getValue("Message.Use").toString().replaceFirst("&", "§") + "§8/allow op <Spieler> [true | false]");
                         }
                     } else {
-                        p.sendMessage(plugin.Prefix + "§3Verwendung: §7/allow op <Spieler> [true | false]");
+                        p.sendMessage(plugin.Prefix + MessageManager.getValue("Message.Use").toString().replaceFirst("&", "§") + "§8/allow op <Spieler> [true | false]");
                     }
                 }
             } else {
-                p.sendMessage(plugin.Prefix + "§cDu hast keine Rechte auf diesen Befehl");
+                p.sendMessage(plugin.Prefix + MessageManager.getValue("Message.NoPerm").toString().replaceFirst("&", "§"));
             }
+        } else {
+            Bukkit.getConsoleSender().sendMessage(plugin.Prefix + MessageManager.getValue("Message.ForRealPlayer").toString().replaceFirst("&", "§"));
         }
         return false;
     }

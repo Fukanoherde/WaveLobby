@@ -8,6 +8,8 @@ Created by LionGaming_95
 
 import de.wavesucht.wavelobby.WaveLobby;
 import de.wavesucht.wavelobby.api.ItemAPI;
+import de.wavesucht.wavelobby.files.MessageManager;
+import de.wavesucht.wavelobby.files.PermManager;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
@@ -39,13 +41,13 @@ public class CMD_Build implements CommandExecutor {
             FreundeMeta.setDisplayName("§6✪ §3Spieler Menu §6✪");
             Freunde.setItemMeta(FreundeMeta);
 
-            if (p.hasPermission("lobby.build") || p.hasPermission("lobby.*")) {
+            if (p.hasPermission(PermManager.getValue("Perms.build")) || p.hasPermission(PermManager.getValue("Perms.all"))) {
                 if (args.length == 0) {
                     if (!plugin.build.contains(p)) {
                         plugin.build.add(p);
                         WaveLobby.invClearer(p);
                         p.setGameMode(GameMode.CREATIVE);
-                        p.sendMessage(plugin.Prefix + "§aDu kannst nun Bauen.");
+                        p.sendMessage(plugin.Prefix + MessageManager.getValue("Message.ActivateBuild").toString().replaceFirst("&","§"));
                         return true;
                     } else {
                         plugin.build.remove(p);
@@ -56,17 +58,17 @@ public class CMD_Build implements CommandExecutor {
                         p.getInventory().setItem(4, ItemAPI.createjoinItem(Material.BARRIER, 1 ,0, "§6✪ §3Keine Gadgets §6✪", Enchantment.LURE, 1));
                         p.getInventory().setItem(5, ItemAPI.createjoinItem(Material.STICK, 1 ,0, "§6✪ §3Spieler Verstecken §6✪", Enchantment.LURE, 1));
                         p.getInventory().setItem(8, Freunde);
-                        p.sendMessage(plugin.Prefix + "§cDu kannst nun nicht mehr Bauen.");
+                        p.sendMessage(plugin.Prefix + MessageManager.getValue("Message.DeactivateBuild").toString().replaceFirst("&", "§"));
                         return true;
                     }
                 } else {
-                    p.sendMessage(plugin.Prefix + "§bVerwendung: §8/build");
+                    p.sendMessage(plugin.Prefix + MessageManager.getValue("Message.Use").toString().replaceFirst("&", "§") + "§8/build");
                 }
             } else {
-                p.sendMessage(plugin.Prefix + "§cDeine Anfrage konnte nicht bearbeitet werden! Grund: §4Fehlende Rechte...");
+                p.sendMessage(plugin.Prefix + MessageManager.getValue("Message.NoPerm").toString().replaceFirst("&","§"));
             }
         } else {
-            Bukkit.getConsoleSender().sendMessage(plugin.Prefix + "§4Dieser Befehl ist nur für Spieler");
+            Bukkit.getConsoleSender().sendMessage(plugin.Prefix + MessageManager.getValue("Message.ForRealPlayer").toString().replaceFirst("&", "§"));
         }
         return false;
     }

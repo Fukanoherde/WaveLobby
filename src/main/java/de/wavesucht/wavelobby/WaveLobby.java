@@ -12,6 +12,7 @@ import de.wavesucht.wavelobby.commands.CMD_ChatClear;
 import de.wavesucht.wavelobby.commands.CMD_SetWarp;
 import de.wavesucht.wavelobby.database.MySQL;
 import de.wavesucht.wavelobby.files.LobbyItems;
+import de.wavesucht.wavelobby.files.MessageManager;
 import de.wavesucht.wavelobby.files.PermManager;
 import de.wavesucht.wavelobby.files.PlayerHeads;
 import de.wavesucht.wavelobby.gui.*;
@@ -67,7 +68,7 @@ public class WaveLobby extends JavaPlugin {
     @Override
     public void onEnable() {
 
-        enableManager();
+        enableFiles();
         enableDatabase();
         enableEvents();
         enableCommands();
@@ -102,21 +103,21 @@ public class WaveLobby extends JavaPlugin {
         Bukkit.getConsoleSender().sendMessage("§9---------------------------------------");
     }
 
-    private void enableManager () {
+    private void enableFiles () {
 
         plugin = this;
         if (!new File(getDataFolder(), "config.yml").exists()) {
             saveResource("config.yml", true);
         }
+        PermManager.loadFile();
+        LobbyItems.loadFile();
+        PlayerHeads.loadFile();
+        MessageManager.loadFile();
         try {
             WarpManager.savecfg();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        PermManager.loadFile();
-        LobbyItems.loadFile();
-        PlayerHeads.loadFile();
     }
 
     private void enableDatabase () {

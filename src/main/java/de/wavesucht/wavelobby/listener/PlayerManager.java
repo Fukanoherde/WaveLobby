@@ -11,6 +11,7 @@ import de.wavesucht.wavelobby.api.AllowOP;
 import de.wavesucht.wavelobby.api.ItemAPI;
 import de.wavesucht.wavelobby.api.NickAPI;
 import de.wavesucht.wavelobby.api.StatsAPI;
+import de.wavesucht.wavelobby.files.MessageManager;
 import de.wavesucht.wavelobby.manager.ScoreboardManager;
 import de.wavesucht.wavelobby.manager.WarpManager;
 import org.bukkit.Bukkit;
@@ -93,7 +94,7 @@ public class PlayerManager implements Listener {
         if (WarpManager.isWarpExist("Spawn")) {
             WarpManager.teleportToWarp(p, "Spawn");
         } else {
-            p.sendMessage(plugin.Prefix + "§4Es wurde kein Spawn gefunden. §cBitte gebe einen Teammitglied Bescheid!");
+            p.sendMessage(plugin.Prefix + MessageManager.getValue("Message.NotFoundWarp.Spawn").toString().replaceFirst("&", "§"));
         }
         p.setGameMode(GameMode.ADVENTURE);
         if (plugin.AllowJoinMessage == true) {
@@ -178,7 +179,6 @@ public class PlayerManager implements Listener {
             Bukkit.broadcastMessage(plugin.Prefix + "§4Wave_SYSTEM");
             Bukkit.broadcastMessage("§l ");
             Bukkit.broadcastMessage(plugin.Prefix + "§cBitte alle Stehen Bleiben!");
-            Bukkit.broadcastMessage(plugin.Prefix + "§eDer: §3" + e.getPlayer().getDisplayName() + " §eHat einen reload beauftragt!");
             Bukkit.reload();
             Bukkit.broadcastMessage(plugin.Prefix + "§aDer Server wurde Neugeladen!");
             Bukkit.broadcastMessage("§l  ");

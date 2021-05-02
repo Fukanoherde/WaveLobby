@@ -6,6 +6,8 @@ Created by LionGaming_95
 
  */
 import de.wavesucht.wavelobby.WaveLobby;
+import de.wavesucht.wavelobby.files.MessageManager;
+import de.wavesucht.wavelobby.files.PermManager;
 import de.wavesucht.wavelobby.manager.WarpManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -28,9 +30,9 @@ public class CMD_SetWarp implements CommandExecutor {
 
         if (sender instanceof Player) {
             Player p = (Player) sender;
-            if (p.hasPermission("lobby.setwaprp") || p.hasPermission("lobby.*")) {
+            if (p.hasPermission(PermManager.getValue("Perms.setwarp")) || p.hasPermission(PermManager.getValue("Perms.all"))) {
                 if (args.length == 1) {
-                    String path = "EasyLobbyManager" + "." + args[0] + ".";
+                    String path = "WaveLobby" + "." + args[0] + ".";
 
                     String welt = p.getWorld().getName();
                     double x = p.getLocation().getX();
@@ -53,17 +55,19 @@ public class CMD_SetWarp implements CommandExecutor {
                         e.printStackTrace();
                     }
 
-                    p.sendMessage(plugin.Prefix + "§3Du hast den Warp für: §a" + args[0] + " §3erfolgreich gesetzt");
+                    String warpName = MessageManager.getValue("Message.SetWarp");
+                    warpName = warpName.replaceAll("%warp%", args[0]);
+                    p.sendMessage(plugin.Prefix + warpName.toString().replaceFirst("&", "§"));
                     return true;
 
                 } else {
-                    p.sendMessage(plugin.Prefix + "§bVerwendung: §8/setwarp <WarpName>");
+                    p.sendMessage(plugin.Prefix + MessageManager.getValue("Message.Use").toString().replaceFirst("&", "§") + "§8/setwarp <WarpName>");
                 }
             } else {
-                p.sendMessage(plugin.Prefix + "§cDeine Anfrage konnte nicht bearbeitet werden! Grund: §4Fehlende Rechte...");
+                p.sendMessage(plugin.Prefix + MessageManager.getValue("Message.NoPerm").toString().replaceFirst("&", "§"));
             }
         } else {
-            Bukkit.getConsoleSender().sendMessage(plugin.Prefix + "§4Dieser Befehl ist nur für Spieler");
+            Bukkit.getConsoleSender().sendMessage(plugin.Prefix + MessageManager.getValue("Message.ForRealPlayer").toString().replaceFirst("&", "§"));
         }
         return false;
     }
