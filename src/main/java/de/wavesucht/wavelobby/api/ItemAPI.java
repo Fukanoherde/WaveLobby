@@ -7,9 +7,11 @@ Created by LionGaming_95
  */
 
 import org.bukkit.Color;
+import org.bukkit.DyeColor;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.BannerMeta;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.inventory.meta.SkullMeta;
@@ -48,6 +50,15 @@ public class ItemAPI {
         leatherArmorMeta.setDisplayName(name);
         leatherArmorMeta.setColor(color);
         itemStack.setItemMeta(leatherArmorMeta);
+
+        return itemStack;
+    }
+
+    public static ItemStack createBanner(DyeColor dyeColor){
+        ItemStack itemStack = new ItemStack(Material.BANNER, 1);
+        BannerMeta bannerMeta = (BannerMeta) itemStack.getItemMeta();
+        bannerMeta.setBaseColor(dyeColor);
+        itemStack.setItemMeta(bannerMeta);
 
         return itemStack;
     }

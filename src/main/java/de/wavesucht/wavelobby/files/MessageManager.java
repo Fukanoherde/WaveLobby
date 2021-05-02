@@ -18,6 +18,7 @@ public class MessageManager {
         setValue("Message.ChatCleared", "&aDer Chat wurde von &4:%player% &ageleert!");
         setValue("Message.PlayerNotFound", "&cDieser Spieler war noch nie auf diesen Server");
         setValue("Message.SetWarp", "&3Du hast den Warp für &a:%warp% &3erfolgreich gesetzt!");
+        setValue("Message.Banner.NoPerms", "&4Es wurde kein Spawn gefunden. &cBitte gebe einen Teammitglied Bescheid!");
         setValue("Message.NotFoundWarp.Spawn", "&4Es wurde kein Spawn gefunden. &cBitte gebe einen Teammitglied Bescheid!");
     }
 

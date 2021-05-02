@@ -16,6 +16,7 @@ import de.wavesucht.wavelobby.files.MessageManager;
 import de.wavesucht.wavelobby.files.PermManager;
 import de.wavesucht.wavelobby.files.PlayerHeads;
 import de.wavesucht.wavelobby.gui.*;
+import de.wavesucht.wavelobby.guimanager.*;
 import de.wavesucht.wavelobby.listener.BlockManager;
 import de.wavesucht.wavelobby.listener.LoginManager;
 import de.wavesucht.wavelobby.listener.PlayerHider;
@@ -58,6 +59,16 @@ public class WaveLobby extends JavaPlugin {
     private GUI_TeamHeads teamHeads;
     private GUI_UserMenu userMenu;
     private GUI_YTHeads ytHeads;
+
+    // gui_manager \\
+
+    private GUI_Banner_Manager banner_manager;
+    private GUI_Boots_Manager boots_manager;
+    private GUI_HeadsManager headsManager;
+    private GUI_Heads_Manager heads_manager;
+    private GUI_Manager_Back back;
+    private GUI_TeamHeads_Manager teamHeadsManager;
+    private GUI_YTHeads_Maanager ytHeads_maanager;
 
     // Utils \\
 
@@ -147,14 +158,26 @@ public class WaveLobby extends JavaPlugin {
         this.userMenu = new GUI_UserMenu(this);
         this.ytHeads = new GUI_YTHeads(this);
 
+        // gui Manager \\
+
+        this.banner_manager = new GUI_Banner_Manager(this);
+        this.banner_manager = new GUI_Banner_Manager(this);
+        this.headsManager = new GUI_HeadsManager(this);
+        this.heads_manager = new GUI_Heads_Manager(this);
+        this.back = new GUI_Manager_Back(this);
+        this.teamHeadsManager = new GUI_TeamHeads_Manager(this);
+        this.ytHeads_maanager = new GUI_YTHeads_Maanager(this);
+
     }
 
     private void enableCommands () {
+
 
         this.allowOP = new CMD_AllowOP(this);
         this.cc = new CMD_ChatClear(this);
         this.buildMode = new CMD_Build(this);
         this.setWarp = new CMD_SetWarp(this);
+
     }
 
     private void enableMessage () {
