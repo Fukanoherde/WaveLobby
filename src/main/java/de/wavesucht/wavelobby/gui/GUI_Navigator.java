@@ -42,7 +42,7 @@ public class GUI_Navigator implements Listener {
 
                         @Override
                         public void run() {
-                            teleporter.setItem(2, ItemAPI.createjoinItem(Material.STICK, 1, 0, "§6✪ §3KnockBackFFA §6✪", Enchantment.LURE, 1));
+                            teleporter.setItem(2, ItemAPI.creationItem(Material.STICK, 1, 0, "§6✪ §3KnockBackFFA §6✪", Enchantment.LURE, 1));
                             e.getPlayer().playSound(e.getPlayer().getLocation(), Sound.CLICK, 1, 1);
                         }
                     }, 2L);
@@ -50,7 +50,7 @@ public class GUI_Navigator implements Listener {
 
                         @Override
                         public void run() {
-                            teleporter.setItem(6, ItemAPI.createjoinItem(Material.DIAMOND, 1, 0, "§6✪ §3Creative §6✪", Enchantment.LURE, 1));
+                            teleporter.setItem(6, ItemAPI.creationItem(Material.DIAMOND, 1, 0, "§6✪ §3Creative §6✪", Enchantment.LURE, 1));
                             e.getPlayer().playSound(e.getPlayer().getLocation(), Sound.CLICK, 1, 1);
                         }
                     }, 4L);
@@ -66,7 +66,7 @@ public class GUI_Navigator implements Listener {
 
                         @Override
                         public void run() {
-                            teleporter.setItem(12, ItemAPI.createjoinItem(Material.DIAMOND_SWORD, 1, 0, "§6✪ §3PvP §6✪", Enchantment.LURE, 1));
+                            teleporter.setItem(12, ItemAPI.creationItem(Material.DIAMOND_SWORD, 1, 0, "§6✪ §3PvP §6✪", Enchantment.LURE, 1));
                             e.getPlayer().playSound(e.getPlayer().getLocation(), Sound.CLICK, 1, 1);
                         }
                     }, 8L);
@@ -74,7 +74,7 @@ public class GUI_Navigator implements Listener {
 
                         @Override
                         public void run() {
-                            teleporter.setItem(13, ItemAPI.createjoinItem(Material.DIAMOND_PICKAXE, 1, 0, "§6✪ §3DullyMiner §6✪", Enchantment.LURE, 1));
+                            teleporter.setItem(13, ItemAPI.creationItem(Material.DIAMOND_PICKAXE, 1, 0, "§6✪ §3DullyMiner §6✪", Enchantment.LURE, 1));
                             e.getPlayer().playSound(e.getPlayer().getLocation(), Sound.CLICK, 1, 1);
                         }
                     }, 10L);
@@ -82,7 +82,7 @@ public class GUI_Navigator implements Listener {
 
                         @Override
                         public void run() {
-                            teleporter.setItem(14, ItemAPI.createjoinItem(Material.NETHER_BRICK, 1, 0, "§6✪ §3BedWars §6✪", Enchantment.LURE, 1));
+                            teleporter.setItem(14, ItemAPI.creationItem(Material.NETHER_BRICK, 1, 0, "§6✪ §3BedWars §6✪", Enchantment.LURE, 1));
                             e.getPlayer().playSound(e.getPlayer().getLocation(), Sound.CLICK, 1, 1);
                         }
                     }, 12L);
@@ -90,7 +90,7 @@ public class GUI_Navigator implements Listener {
 
                         @Override
                         public void run() {
-                            teleporter.setItem(16, ItemAPI.createjoinItem(Material.REDSTONE_TORCH_ON, 1, 0, "§6✪ §3Spawn §6✪", Enchantment.LURE, 1));
+                            teleporter.setItem(16, ItemAPI.creationItem(Material.REDSTONE_TORCH_ON, 1, 0, "§6✪ §3Spawn §6✪", Enchantment.LURE, 1));
                             e.getPlayer().playSound(e.getPlayer().getLocation(), Sound.CLICK, 1, 1);
                         }
                     }, 14L);
@@ -98,7 +98,7 @@ public class GUI_Navigator implements Listener {
 
                         @Override
                         public void run() {
-                            teleporter.setItem(20, ItemAPI.createjoinItem(Material.SAPLING, 1, 0, "§6✪ §3Überleben §6✪", Enchantment.LURE, 1));
+                            teleporter.setItem(20, ItemAPI.creationItem(Material.SAPLING, 1, 0, "§6✪ §3Überleben §6✪", Enchantment.LURE, 1));
                             e.getPlayer().playSound(e.getPlayer().getLocation(), Sound.CLICK, 1, 1);
                         }
                     }, 16L);
@@ -106,7 +106,7 @@ public class GUI_Navigator implements Listener {
 
                         @Override
                         public void run() {
-                            teleporter.setItem(24, ItemAPI.createjoinItem(Material.DIAMOND_SPADE, 1, 0, "§6✪ §3Spleef §6✪", Enchantment.LURE, 1));
+                            teleporter.setItem(24, ItemAPI.creationItem(Material.DIAMOND_SPADE, 1, 0, "§6✪ §3Spleef §6✪", Enchantment.LURE, 1));
                             e.getPlayer().playSound(e.getPlayer().getLocation(), Sound.CLICK, 1, 1);
                         }
                     }, 18L);

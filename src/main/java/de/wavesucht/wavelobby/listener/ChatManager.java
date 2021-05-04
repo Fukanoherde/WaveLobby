@@ -1,12 +1,15 @@
 package de.wavesucht.wavelobby.listener;
 
 import de.wavesucht.wavelobby.WaveLobby;
+import net.luckperms.api.LuckPerms;
+import net.luckperms.api.LuckPermsProvider;
+import net.luckperms.api.model.group.Group;
+import net.luckperms.api.model.user.User;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
-import ru.tehkode.permissions.bukkit.PermissionsEx;
 
 public class ChatManager implements Listener {
 
@@ -18,60 +21,62 @@ public class ChatManager implements Listener {
     @EventHandler
     public void onChatPerm(AsyncPlayerChatEvent e) {
         Player p = e.getPlayer();
+
+        LuckPerms api = LuckPermsProvider.get();
+        User user = api.getUserManager().getUser(p.getUniqueId());
+        Group group = api.getGroupManager().getGroup(user.getPrimaryGroup());
+
         if (e.isCancelled()) {
             return;
         }
-        if (PermissionsEx.getUser(p.getName()).inGroup("Owner") || PermissionsEx.getUser(p.getName()).inGroup("Admin") ||
-                PermissionsEx.getUser(p.getName()).inGroup("SrDev") || PermissionsEx.getUser(p.getName()).inGroup("Dev")
-                || PermissionsEx.getUser(p.getName()).inGroup("T-Dev") ||
-                PermissionsEx.getUser(p.getName()).inGroup("SrMod") || PermissionsEx.getUser(p.getName()).inGroup("Moderator") ||
-                PermissionsEx.getUser(p.getName()).inGroup("T-Mod") ||
-                PermissionsEx.getUser(p.getName()).inGroup("SrSupporter") || PermissionsEx.getUser(p.getName()).inGroup("Supporter") ||
-                PermissionsEx.getUser(p.getName()).inGroup("T-Supporter") || PermissionsEx.getUser(p.getName()).inGroup("SrBuilder")
-                || PermissionsEx.getUser(p.getName()).inGroup("Builder") || PermissionsEx.getUser(p.getName()).inGroup("T-Builder")
-                || PermissionsEx.getUser(p.getName()).inGroup("YouTuber") || PermissionsEx.getUser(p.getName()).inGroup("Premium")) {
-            return;
-        } else {
+        if (group.getName().equals("Spieler")) {
             e.setCancelled(true);
             p.sendMessage(plugin.Prefix + "§4Error: §cDu musst mindestens den Premium Rang Haben. Um hier Schreiben zu Können!");
+        } else {
+            return;
         }
     }
     @EventHandler
     public void onChat(AsyncPlayerChatEvent e) {
         Player p = e.getPlayer();
+
+        LuckPerms api = LuckPermsProvider.get();
+        User user = api.getUserManager().getUser(p.getUniqueId());
+        Group group = api.getGroupManager().getGroup(user.getPrimaryGroup());
+
         String msg = e.getMessage();
 
-        if (PermissionsEx.getUser(p.getName()).inGroup("Owner")) {
+        if (group.getName().equals("Owner")) {
             e.setFormat("§8[§4Inhaber§8] " + p.getDisplayName() + " §7» " + msg);
-        } else if (PermissionsEx.getUser(p.getName()).inGroup("Admin")) {
+        } else if (group.getName().equals("Admin")) {
             e.setFormat("§8[§cAdmin§8] " + p.getDisplayName() + " §7» " + msg);
-        } else if (PermissionsEx.getUser(p.getName()).inGroup("SrDev")) {
+        } else if (group.getName().equals("SrDev")) {
             e.setFormat("§8[§bSrDev§8] " + p.getDisplayName() + " §7» " + msg);
-        } else if (PermissionsEx.getUser(p.getName()).inGroup("Developer")) {
+        } else if (group.getName().equals("Dev")) {
             e.setFormat("§8[§bDev§8] " + p.getDisplayName() + " §7» " + msg);
-        } else if (PermissionsEx.getUser(p.getName()).inGroup("T-Dev")) {
+        } else if (group.getName().equals("T-Dev")) {
             e.setFormat("§8[§bT-Dev§8] " + p.getDisplayName() + " §7» " + msg);
-        } else if (PermissionsEx.getUser(p.getName()).inGroup("SrMod")) {
+        } else if (group.getName().equals("SrMod")) {
             e.setFormat("§8[§3SrMod§8] " + p.getDisplayName() + " §7» " + msg);
-        } else if (PermissionsEx.getUser(p.getName()).inGroup("Moderator")) {
+        } else if (group.getName().equals("Mod")) {
             e.setFormat("§8[§3Mod§8] " + p.getDisplayName() + " §7» " + msg);
-        } else if (PermissionsEx.getUser(p.getName()).inGroup("T-Mod")) {
+        } else if (group.getName().equals("T-Mod")) {
             e.setFormat("§8[§3T-Mod§8] " + p.getDisplayName() + " §7» " + msg);
-        } else if (PermissionsEx.getUser(p.getName()).inGroup("SrSupporter")) {
+        } else if (group.getName().equals("SrSupporter")) {
             e.setFormat("§8[§1SrSupporter§8] " + p.getDisplayName() + " §7» " + msg);
-        } else if (PermissionsEx.getUser(p.getName()).inGroup("Supporter")) {
+        } else if (group.getName().equals("Supporter")) {
             e.setFormat("§8[§1Supporter§8] " + p.getDisplayName() + " §7» " + msg);
-        } else if (PermissionsEx.getUser(p.getName()).inGroup("T-Supporter")) {
+        } else if (group.getName().equals("T-Supporter")) {
             e.setFormat("§8[§1T-Supporter§8] " + p.getDisplayName() + " §7» " + msg);
-        } else if (PermissionsEx.getUser(p.getName()).inGroup("SrBuilder")) {
+        } else if (group.getName().equals("SrBuilder")) {
             e.setFormat("§8[§aSrBuilder§8] " + p.getDisplayName() + " §7» " + msg);
-        } else if (PermissionsEx.getUser(p.getName()).inGroup("Builder")) {
+        } else if (group.getName().equals("Builder")) {
             e.setFormat("§8[§aBuilder§8] " + p.getDisplayName() + " §7» " + msg);
-        } else if (PermissionsEx.getUser(p.getName()).inGroup("T-Builder")) {
+        } else if (group.getName().equals("T-Builder")) {
             e.setFormat("§8[§aT-Builder§8] " + p.getDisplayName() + " §7» " + msg);
-        } else if (PermissionsEx.getUser(p.getName()).inGroup("YouTuber")) {
+        } else if (group.getName().equals("YouTuber")) {
             e.setFormat("§5" + p.getDisplayName() + " §7» " + msg);
-        } else if (PermissionsEx.getUser(p.getName()).inGroup("Premium")) {
+        } else if (group.getName().equals("Premium")) {
             e.setFormat("§6" + p.getDisplayName() + " §7» " + msg);
         } else {
             e.setFormat("§8" + p.getDisplayName() + " §7» " + msg);

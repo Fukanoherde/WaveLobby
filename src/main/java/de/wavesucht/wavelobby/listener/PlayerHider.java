@@ -36,7 +36,7 @@ public class PlayerHider implements Listener {
                     for (Player all : Bukkit.getOnlinePlayers()) {
                         p.showPlayer(all);
                         p.playSound(p.getLocation(), Sound.LEVEL_UP, 1, 1);
-                        p.getInventory().setItem(5, ItemAPI.createjoinItem(Material.STICK, 1,  0,"§6✪ §3Spieler Verstecken §6✪", Enchantment.LURE, 3));
+                        p.getInventory().setItem(5, ItemAPI.creationItem(Material.STICK, 1,  0,"§6✪ §3Spieler Verstecken §6✪", Enchantment.LURE, 3));
                         e.getPlayer().updateInventory();
                     }
                 } else {
@@ -44,7 +44,7 @@ public class PlayerHider implements Listener {
                     for (Player all : Bukkit.getOnlinePlayers()) {
                         p.hidePlayer(all);
                         p.playSound(p.getLocation(), Sound.LEVEL_UP, 1, 1);
-                        p.getInventory().setItem(5, ItemAPI.createjoinItem(Material.BLAZE_ROD, 1,  0,"§6✪ §3Spieler Anzeigen §6✪", Enchantment.LURE, 3));
+                        p.getInventory().setItem(5, ItemAPI.creationItem(Material.BLAZE_ROD, 1,  0,"§6✪ §3Spieler Anzeigen §6✪", Enchantment.LURE, 3));
                         e.getPlayer().updateInventory();
                     }
                 }

@@ -9,13 +9,16 @@ Created by LionGaming_95
 import de.wavesucht.wavelobby.WaveLobby;
 import de.wavesucht.wavelobby.api.AllowOP;
 import de.wavesucht.wavelobby.files.MessageManager;
+import net.luckperms.api.LuckPerms;
+import net.luckperms.api.LuckPermsProvider;
+import net.luckperms.api.model.group.Group;
+import net.luckperms.api.model.user.User;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import ru.tehkode.permissions.bukkit.PermissionsEx;
 
 public class CMD_AllowOP implements CommandExecutor {
 
@@ -30,7 +33,12 @@ public class CMD_AllowOP implements CommandExecutor {
 
         if (sender instanceof Player) {
             Player p = (Player) sender;
-            if (PermissionsEx.getUser(p).inGroup("Owner")) {
+
+            LuckPerms api = LuckPermsProvider.get();
+            User user = api.getUserManager().getUser(p.getUniqueId());
+            Group group = api.getGroupManager().getGroup(user.getPrimaryGroup());
+
+            if (group.getName().equals("Owner")) {
                 if (args.length == 0) {
                     p.sendMessage(plugin.Prefix + MessageManager.getValue("Message.Use").toString().replaceFirst("", ""));
                     return true;

@@ -20,6 +20,9 @@ import de.wavesucht.wavelobby.guimanager.*;
 import de.wavesucht.wavelobby.listener.*;
 import de.wavesucht.wavelobby.manager.WarpManager;
 
+import net.luckperms.api.LuckPerms;
+import net.luckperms.api.LuckPermsProvider;
+import net.luckperms.api.model.user.User;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;

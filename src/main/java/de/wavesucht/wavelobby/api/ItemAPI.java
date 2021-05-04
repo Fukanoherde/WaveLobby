@@ -1,11 +1,5 @@
 package de.wavesucht.wavelobby.api;
 
-/*
-
-Created by LionGaming_95
-
- */
-
 import org.bukkit.Color;
 import org.bukkit.DyeColor;
 import org.bukkit.Material;
@@ -18,7 +12,7 @@ import org.bukkit.inventory.meta.SkullMeta;
 
 public class ItemAPI {
 
-    public static ItemStack createjoinItem(Material mat, int amount, int shortid, String DisplayName, Enchantment ench, int level) {
+    public static ItemStack creationItem(Material mat, int amount, int shortid, String DisplayName, Enchantment ench, int level) {
         short s = (short) shortid;
         ItemStack item = new ItemStack(mat, amount, s);
         ItemMeta meta = item.getItemMeta();

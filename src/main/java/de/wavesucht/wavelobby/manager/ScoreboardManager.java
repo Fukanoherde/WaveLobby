@@ -8,13 +8,16 @@ Created by LionGaming_95
 
 import de.wavesucht.wavelobby.WaveLobby;
 import de.wavesucht.wavelobby.api.StatsAPI;
+import net.luckperms.api.LuckPerms;
+import net.luckperms.api.LuckPermsProvider;
+import net.luckperms.api.model.group.Group;
+import net.luckperms.api.model.user.User;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.Team;
-import ru.tehkode.permissions.bukkit.PermissionsEx;
 
 import java.util.HashMap;
 
@@ -29,6 +32,11 @@ public class ScoreboardManager {
     }
 
     public static void setScoreboard(Player p) {
+
+        LuckPerms api = LuckPermsProvider.get();
+        User user = api.getUserManager().getUser(p.getUniqueId());
+        Group group = api.getGroupManager().getGroup(user.getPrimaryGroup());
+
         board = Bukkit.getScoreboardManager().getNewScoreboard();
 
         Objective obj = board.registerNewObjective("test", "bbb");
@@ -45,37 +53,37 @@ public class ScoreboardManager {
         obj.getScore("§b§lwavesucht.de").setScore(6);
         obj.getScore("§l ").setScore(5);
         obj.getScore("§7§lDein Rang:").setScore(4);
-        if (PermissionsEx.getUser(p.getName()).inGroup("Owner")) {
+        if (group.getName().equals("Owner")) {
             obj.getScore("§4§lInhaber").setScore(3);
-        } else if (PermissionsEx.getUser(p.getName()).inGroup("Admin")) {
+        } else if (group.getName().equals("Admin")) {
             obj.getScore("§c§lAdmin").setScore(3);
-        } else if (PermissionsEx.getUser(p.getName()).inGroup("SrDev")) {
+        } else if (group.getName().equals("SrDev")) {
             obj.getScore("§b§lSrDeveloper").setScore(3);
-        } else if (PermissionsEx.getUser(p.getName()).inGroup("Developer")) {
+        } else if (group.getName().equals("Dev")) {
             obj.getScore("§b§lDeveloper").setScore(3);
-        } else if (PermissionsEx.getUser(p.getName()).inGroup("T-Dev")) {
+        } else if (group.getName().equals("T-Dev")) {
             obj.getScore("§b§lTest-Developer").setScore(3);
-        } else if (PermissionsEx.getUser(p.getName()).inGroup("SrMod")) {
+        } else if (group.getName().equals("SrMod")) {
             obj.getScore("§3§lSrModerator").setScore(3);
-        } else if (PermissionsEx.getUser(p.getName()).inGroup("Moderator")) {
+        } else if (group.getName().equals("Mod")) {
             obj.getScore("§3§lModerator").setScore(3);
-        } else if (PermissionsEx.getUser(p.getName()).inGroup("T-Mod")) {
+        } else if (group.getName().equals("T-Mod")) {
             obj.getScore("§3§lTest-Moderator").setScore(3);
-        } else if (PermissionsEx.getUser(p.getName()).inGroup("SrSupporter")) {
+        } else if (group.getName().equals("SrSupporter")) {
             obj.getScore("§1§lSrSupporter").setScore(3);
-        } else if (PermissionsEx.getUser(p.getName()).inGroup("Supporter")) {
+        } else if (group.getName().equals("Supporter")) {
             obj.getScore("§1§lSupporter").setScore(3);
-        } else if (PermissionsEx.getUser(p.getName()).inGroup("T-Supporter")) {
+        } else if (group.getName().equals("T-Supporter")) {
             obj.getScore("§1§lTest-Supporter").setScore(3);
-        } else if (PermissionsEx.getUser(p.getName()).inGroup("SrBuilder")) {
+        } else if (group.getName().equals("SrBuilder")) {
             obj.getScore("§a§lSrBuilder").setScore(3);
-        } else if (PermissionsEx.getUser(p.getName()).inGroup("Builder")) {
+        } else if (group.getName().equals("Builder")) {
             obj.getScore("§a§lBuilder").setScore(3);
-        } else if (PermissionsEx.getUser(p.getName()).inGroup("T-Builder")) {
+        } else if (group.getName().equals("T-Builder")) {
             obj.getScore("§a§lTest-Builder").setScore(3);
-        } else if (PermissionsEx.getUser(p.getName()).inGroup("YouTuber")) {
+        } else if (group.getName().equals("")) {
             obj.getScore("§5§lYouTuber").setScore(3);
-        } else if (PermissionsEx.getUser(p.getName()).inGroup("Premium")) {
+        } else if (group.getName().equals("Premium")) {
             obj.getScore("§6§l§lPremium").setScore(3);
         } else {
             obj.getScore("§8§lSpieler").setScore(3);
@@ -105,52 +113,53 @@ public class ScoreboardManager {
         Team spieler = board.registerNewTeam("rrr");
 
         for (Player all : Bukkit.getOnlinePlayers()) {
-            if (PermissionsEx.getUser(all).inGroup("Owner")) {
+
+            if (group.getName().equals("Owner")) {
                 owner.setPrefix("§4§lInhaber §8| ");
                 owner.addPlayer(all);
-            } else if (PermissionsEx.getUser(all).inGroup("Admin")) {
+            } else if (group.getName().equals("Admin")) {
                 admin.setPrefix("§c§lAdmin §8| ");
                 admin.addPlayer(all);
-            } else if (PermissionsEx.getUser(all).inGroup("SrDev")) {
+            } else if (group.getName().equals("SrDev")) {
                 srdeveloper.setPrefix("§b§lSrDev §8| ");
                 srdeveloper.addPlayer(all);
-            } else if (PermissionsEx.getUser(all).inGroup("Developer")) {
+            } else if (group.getName().equals("Dev")) {
                 developer.setPrefix("§b§lDev §8| ");
                 developer.addPlayer(all);
-            } else if (PermissionsEx.getUser(all).inGroup("T-Dev")) {
+            } else if (group.getName().equals("T-Dev")) {
                 tdev.setPrefix("§b§lT-Dev §8| ");
                 tdev.addPlayer(all);
-            } else if (PermissionsEx.getUser(all).inGroup("SrMod")) {
+            } else if (group.getName().equals("SrMod")) {
                 srmoderator.setPrefix("§3§lSrMod §8| ");
                 srmoderator.addPlayer(all);
-            } else if (PermissionsEx.getUser(all).inGroup("Moderator")) {
+            } else if (group.getName().equals("Mod")) {
                 moderator.setPrefix("§3§lMod §8| ");
                 moderator.addPlayer(all);
-            } else if (PermissionsEx.getUser(all).inGroup("T-Mod")) {
+            } else if (group.getName().equals("T-Mod")) {
                 tmoderator.setPrefix("§3§lT-Mod §8| ");
                 tmoderator.addPlayer(all);
-            } else if (PermissionsEx.getUser(all).inGroup("SrSupporter")) {
+            } else if (group.getName().equals("SrSupporter")) {
                 srsupporter.setPrefix("§1§lSrSupporter §8| ");
                 srsupporter.addPlayer(all);
-            } else if (PermissionsEx.getUser(all).inGroup("Supporter")) {
+            } else if (group.getName().equals("Supporter")) {
                 supporter.setPrefix("§1§lSupporter §8| ");
                 supporter.addPlayer(all);
-            } else if (PermissionsEx.getUser(all).inGroup("T-Supporter")) {
+            } else if (group.getName().equals("T-Supporter")) {
                 tsupporter.setPrefix("§1§lT-Supporter §8| ");
                 tsupporter.addPlayer(all);
-            } else if (PermissionsEx.getUser(all).inGroup("SrBuilder")) {
+            } else if (group.getName().equals("SrBuilder")) {
                 srbuilder.setPrefix("§a§lSrBuilder §8| ");
                 srbuilder.addPlayer(all);
-            } else if (PermissionsEx.getUser(all).inGroup("Builder")) {
+            } else if (group.getName().equals("Builder")) {
                 builder.setPrefix("§a§lBuilder §8| ");
                 builder.addPlayer(all);
-            } else if (PermissionsEx.getUser(all).inGroup("T-Builder")) {
+            } else if (group.getName().equals("T-Builder")) {
                 tbuilder.setPrefix("§a§lT-Builder §8| ");
                 tbuilder.addPlayer(all);
-            } else if (PermissionsEx.getUser(all).inGroup("YouTuber")) {
+            } else if (group.getName().equals("YouTuber")) {
                 youtuber.setPrefix("§5§lYouTuber §8| ");
                 youtuber.addPlayer(all);
-            } else if (PermissionsEx.getUser(all).inGroup("Premium")) {
+            } else if (group.getName().equals("Premium")) {
                 premium.setPrefix("§6§lPremium §8| ");
                 premium.addPlayer(all);
             } else {
@@ -165,5 +174,11 @@ public class ScoreboardManager {
 
         obj.getScore("§e" + Bukkit.getOnlinePlayers().size() + " §8/ §a" + Bukkit.getMaxPlayers()).setScore(12);
         obj.getScore("§e" + StatsAPI.getCoins(p.getUniqueId().toString(), p.getName())).setScore(9);
+    }
+
+    private void getLuckPerms(Player p) {
+        LuckPerms api = LuckPermsProvider.get();
+        User user = api.getUserManager().getUser(p.getUniqueId());
+        Group group = api.getGroupManager().getGroup(user.getPrimaryGroup());
     }
 }

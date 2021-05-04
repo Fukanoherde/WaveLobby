@@ -53,10 +53,10 @@ public class CMD_Build implements CommandExecutor {
                         plugin.build.remove(p);
                         WaveLobby.invClearer(p);
                         p.setGameMode(GameMode.ADVENTURE);
-                        p.getInventory().setItem(0, ItemAPI.createjoinItem(Material.COMPASS, 1 ,0, "§6✪ §3Navigator §6✪", Enchantment.LURE, 1));
-                        p.getInventory().setItem(3, ItemAPI.createjoinItem(Material.BREWING_STAND, 1 ,0, "§6✪ §3Lobby Switcher §6✪", Enchantment.LURE, 1));
-                        p.getInventory().setItem(4, ItemAPI.createjoinItem(Material.BARRIER, 1 ,0, "§6✪ §3Keine Gadgets §6✪", Enchantment.LURE, 1));
-                        p.getInventory().setItem(5, ItemAPI.createjoinItem(Material.STICK, 1 ,0, "§6✪ §3Spieler Verstecken §6✪", Enchantment.LURE, 1));
+                        p.getInventory().setItem(0, ItemAPI.creationItem(Material.COMPASS, 1 ,0, "§6✪ §3Navigator §6✪", Enchantment.LURE, 1));
+                        p.getInventory().setItem(3, ItemAPI.creationItem(Material.BREWING_STAND, 1 ,0, "§6✪ §3Lobby Switcher §6✪", Enchantment.LURE, 1));
+                        p.getInventory().setItem(4, ItemAPI.creationItem(Material.BARRIER, 1 ,0, "§6✪ §3Keine Gadgets §6✪", Enchantment.LURE, 1));
+                        p.getInventory().setItem(5, ItemAPI.creationItem(Material.STICK, 1 ,0, "§6✪ §3Spieler Verstecken §6✪", Enchantment.LURE, 1));
                         p.getInventory().setItem(8, Freunde);
                         p.sendMessage(plugin.Prefix + MessageManager.getValue("Message.DeactivateBuild").toString().replaceFirst("&", "§"));
                         return true;
