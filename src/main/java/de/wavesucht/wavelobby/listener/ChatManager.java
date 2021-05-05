@@ -18,6 +18,7 @@ public class ChatManager implements Listener {
         this.plugin = plugin;
         Bukkit.getPluginManager().registerEvents(this, plugin);
     }
+
     @EventHandler
     public void onChatPerm(AsyncPlayerChatEvent e) {
         Player p = e.getPlayer();
@@ -29,7 +30,7 @@ public class ChatManager implements Listener {
         if (e.isCancelled()) {
             return;
         }
-        if (group.getName().equals("Spieler")) {
+        if (group.getName().equals("spieler")) {
             e.setCancelled(true);
             p.sendMessage(plugin.Prefix + "§4Error: §cDu musst mindestens den Premium Rang Haben. Um hier Schreiben zu Können!");
         } else {
@@ -46,37 +47,37 @@ public class ChatManager implements Listener {
 
         String msg = e.getMessage();
 
-        if (group.getName().equals("Owner")) {
+        if (group.getName().equals("owner")) {
             e.setFormat("§8[§4Inhaber§8] " + p.getDisplayName() + " §7» " + msg);
-        } else if (group.getName().equals("Admin")) {
+        } else if (group.getName().equals("admin")) {
             e.setFormat("§8[§cAdmin§8] " + p.getDisplayName() + " §7» " + msg);
-        } else if (group.getName().equals("SrDev")) {
+        } else if (group.getName().equals("srdev")) {
             e.setFormat("§8[§bSrDev§8] " + p.getDisplayName() + " §7» " + msg);
-        } else if (group.getName().equals("Dev")) {
+        } else if (group.getName().equals("dev")) {
             e.setFormat("§8[§bDev§8] " + p.getDisplayName() + " §7» " + msg);
-        } else if (group.getName().equals("T-Dev")) {
+        } else if (group.getName().equals("t-dev")) {
             e.setFormat("§8[§bT-Dev§8] " + p.getDisplayName() + " §7» " + msg);
-        } else if (group.getName().equals("SrMod")) {
+        } else if (group.getName().equals("srmod")) {
             e.setFormat("§8[§3SrMod§8] " + p.getDisplayName() + " §7» " + msg);
-        } else if (group.getName().equals("Mod")) {
+        } else if (group.getName().equals("mod")) {
             e.setFormat("§8[§3Mod§8] " + p.getDisplayName() + " §7» " + msg);
-        } else if (group.getName().equals("T-Mod")) {
+        } else if (group.getName().equals("t-mod")) {
             e.setFormat("§8[§3T-Mod§8] " + p.getDisplayName() + " §7» " + msg);
-        } else if (group.getName().equals("SrSupporter")) {
+        } else if (group.getName().equals("srsupporter")) {
             e.setFormat("§8[§1SrSupporter§8] " + p.getDisplayName() + " §7» " + msg);
-        } else if (group.getName().equals("Supporter")) {
+        } else if (group.getName().equals("supporter")) {
             e.setFormat("§8[§1Supporter§8] " + p.getDisplayName() + " §7» " + msg);
-        } else if (group.getName().equals("T-Supporter")) {
+        } else if (group.getName().equals("t-supporter")) {
             e.setFormat("§8[§1T-Supporter§8] " + p.getDisplayName() + " §7» " + msg);
-        } else if (group.getName().equals("SrBuilder")) {
+        } else if (group.getName().equals("srsuilder")) {
             e.setFormat("§8[§aSrBuilder§8] " + p.getDisplayName() + " §7» " + msg);
-        } else if (group.getName().equals("Builder")) {
+        } else if (group.getName().equals("builder")) {
             e.setFormat("§8[§aBuilder§8] " + p.getDisplayName() + " §7» " + msg);
-        } else if (group.getName().equals("T-Builder")) {
+        } else if (group.getName().equals("t-builder")) {
             e.setFormat("§8[§aT-Builder§8] " + p.getDisplayName() + " §7» " + msg);
-        } else if (group.getName().equals("YouTuber")) {
+        } else if (group.getName().equals("youtuber")) {
             e.setFormat("§5" + p.getDisplayName() + " §7» " + msg);
-        } else if (group.getName().equals("Premium")) {
+        } else if (group.getName().equals("premium")) {
             e.setFormat("§6" + p.getDisplayName() + " §7» " + msg);
         } else {
             e.setFormat("§8" + p.getDisplayName() + " §7» " + msg);

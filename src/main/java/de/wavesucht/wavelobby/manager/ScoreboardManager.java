@@ -53,37 +53,37 @@ public class ScoreboardManager {
         obj.getScore("§b§lwavesucht.de").setScore(6);
         obj.getScore("§l ").setScore(5);
         obj.getScore("§7§lDein Rang:").setScore(4);
-        if (group.getName().equals("Owner")) {
+        if (group.getName().equals("owner")) {
             obj.getScore("§4§lInhaber").setScore(3);
-        } else if (group.getName().equals("Admin")) {
+        } else if (group.getName().equals("admin")) {
             obj.getScore("§c§lAdmin").setScore(3);
-        } else if (group.getName().equals("SrDev")) {
+        } else if (group.getName().equals("srdev")) {
             obj.getScore("§b§lSrDeveloper").setScore(3);
-        } else if (group.getName().equals("Dev")) {
+        } else if (group.getName().equals("dev")) {
             obj.getScore("§b§lDeveloper").setScore(3);
-        } else if (group.getName().equals("T-Dev")) {
+        } else if (group.getName().equals("t-dev")) {
             obj.getScore("§b§lTest-Developer").setScore(3);
-        } else if (group.getName().equals("SrMod")) {
+        } else if (group.getName().equals("srmod")) {
             obj.getScore("§3§lSrModerator").setScore(3);
-        } else if (group.getName().equals("Mod")) {
+        } else if (group.getName().equals("mod")) {
             obj.getScore("§3§lModerator").setScore(3);
-        } else if (group.getName().equals("T-Mod")) {
+        } else if (group.getName().equals("t-mod")) {
             obj.getScore("§3§lTest-Moderator").setScore(3);
-        } else if (group.getName().equals("SrSupporter")) {
+        } else if (group.getName().equals("srsupporter")) {
             obj.getScore("§1§lSrSupporter").setScore(3);
-        } else if (group.getName().equals("Supporter")) {
+        } else if (group.getName().equals("supporter")) {
             obj.getScore("§1§lSupporter").setScore(3);
-        } else if (group.getName().equals("T-Supporter")) {
+        } else if (group.getName().equals("t-supporter")) {
             obj.getScore("§1§lTest-Supporter").setScore(3);
-        } else if (group.getName().equals("SrBuilder")) {
+        } else if (group.getName().equals("srbuilder")) {
             obj.getScore("§a§lSrBuilder").setScore(3);
-        } else if (group.getName().equals("Builder")) {
+        } else if (group.getName().equals("builder")) {
             obj.getScore("§a§lBuilder").setScore(3);
-        } else if (group.getName().equals("T-Builder")) {
+        } else if (group.getName().equals("t-builder")) {
             obj.getScore("§a§lTest-Builder").setScore(3);
-        } else if (group.getName().equals("")) {
+        } else if (group.getName().equals("youtuber")) {
             obj.getScore("§5§lYouTuber").setScore(3);
-        } else if (group.getName().equals("Premium")) {
+        } else if (group.getName().equals("premium")) {
             obj.getScore("§6§l§lPremium").setScore(3);
         } else {
             obj.getScore("§8§lSpieler").setScore(3);
@@ -113,57 +113,56 @@ public class ScoreboardManager {
         Team spieler = board.registerNewTeam("rrr");
 
         for (Player all : Bukkit.getOnlinePlayers()) {
-
-            if (group.getName().equals("Owner")) {
+            if (all.hasPermission("prefix.owner")) {
                 owner.setPrefix("§4§lInhaber §8| ");
                 owner.addPlayer(all);
-            } else if (group.getName().equals("Admin")) {
+            } else if (all.hasPermission("prefix.admin")) {
                 admin.setPrefix("§c§lAdmin §8| ");
                 admin.addPlayer(all);
-            } else if (group.getName().equals("SrDev")) {
+            } else if (all.hasPermission("prefix.srdsev")) {
                 srdeveloper.setPrefix("§b§lSrDev §8| ");
                 srdeveloper.addPlayer(all);
-            } else if (group.getName().equals("Dev")) {
+            } else if (all.hasPermission("prefix.dev")) {
                 developer.setPrefix("§b§lDev §8| ");
                 developer.addPlayer(all);
-            } else if (group.getName().equals("T-Dev")) {
+            } else if (all.hasPermission("prefix.t-dev")) {
                 tdev.setPrefix("§b§lT-Dev §8| ");
                 tdev.addPlayer(all);
-            } else if (group.getName().equals("SrMod")) {
+            } else if (all.hasPermission("prefix.srmod")) {
                 srmoderator.setPrefix("§3§lSrMod §8| ");
                 srmoderator.addPlayer(all);
-            } else if (group.getName().equals("Mod")) {
+            } else if (all.hasPermission("prefix.mod")) {
                 moderator.setPrefix("§3§lMod §8| ");
                 moderator.addPlayer(all);
-            } else if (group.getName().equals("T-Mod")) {
+            } else if (all.hasPermission("prefix.t-mod")) {
                 tmoderator.setPrefix("§3§lT-Mod §8| ");
                 tmoderator.addPlayer(all);
-            } else if (group.getName().equals("SrSupporter")) {
+            } else if (all.hasPermission("prefix.srsupporter")) {
                 srsupporter.setPrefix("§1§lSrSupporter §8| ");
                 srsupporter.addPlayer(all);
-            } else if (group.getName().equals("Supporter")) {
+            } else if (all.hasPermission("prefix.supporter")) {
                 supporter.setPrefix("§1§lSupporter §8| ");
                 supporter.addPlayer(all);
-            } else if (group.getName().equals("T-Supporter")) {
+            } else if (all.hasPermission("prefix.t-supporter")) {
                 tsupporter.setPrefix("§1§lT-Supporter §8| ");
                 tsupporter.addPlayer(all);
-            } else if (group.getName().equals("SrBuilder")) {
+            } else if (all.hasPermission("prefix.srbuilder")) {
                 srbuilder.setPrefix("§a§lSrBuilder §8| ");
                 srbuilder.addPlayer(all);
-            } else if (group.getName().equals("Builder")) {
+            } else if (all.hasPermission("prefix.builder")) {
                 builder.setPrefix("§a§lBuilder §8| ");
                 builder.addPlayer(all);
-            } else if (group.getName().equals("T-Builder")) {
+            } else if (all.hasPermission("prefix.t-builder")) {
                 tbuilder.setPrefix("§a§lT-Builder §8| ");
                 tbuilder.addPlayer(all);
-            } else if (group.getName().equals("YouTuber")) {
-                youtuber.setPrefix("§5§lYouTuber §8| ");
+            } else if (all.hasPermission("prefix.youtuber")) {
+                youtuber.setPrefix("§5§l");
                 youtuber.addPlayer(all);
-            } else if (group.getName().equals("Premium")) {
-                premium.setPrefix("§6§lPremium §8| ");
+            } else if (all.hasPermission("prefix.premium")) {
+                premium.setPrefix("§6§l");
                 premium.addPlayer(all);
             } else {
-                spieler.setPrefix("§8§lSpieler | ");
+                spieler.setPrefix("§8§l");
                 spieler.addPlayer(all);
             }
         }
@@ -174,11 +173,5 @@ public class ScoreboardManager {
 
         obj.getScore("§e" + Bukkit.getOnlinePlayers().size() + " §8/ §a" + Bukkit.getMaxPlayers()).setScore(12);
         obj.getScore("§e" + StatsAPI.getCoins(p.getUniqueId().toString(), p.getName())).setScore(9);
-    }
-
-    private void getLuckPerms(Player p) {
-        LuckPerms api = LuckPermsProvider.get();
-        User user = api.getUserManager().getUser(p.getUniqueId());
-        Group group = api.getGroupManager().getGroup(user.getPrimaryGroup());
     }
 }

@@ -65,6 +65,14 @@
             <scope>provided</scope>
         </dependency>
 
+        <!--  cloudnet cloudperms module for plugins and modules -->
+        <dependency>
+            <groupId>de.dytanic.cloudnet</groupId>
+            <artifactId>cloudnet-cloudperms</artifactId>
+            <version>LATEST</version>
+            <scope>provided</scope>
+        </dependency>
+
         <!--  cloudnet syncproxy module for plugins (proxy) and modules -->
         <dependency>
             <groupId>de.dytanic.cloudnet</groupId>

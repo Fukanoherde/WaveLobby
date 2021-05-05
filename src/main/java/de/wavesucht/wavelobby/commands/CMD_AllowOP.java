@@ -38,7 +38,7 @@ public class CMD_AllowOP implements CommandExecutor {
             User user = api.getUserManager().getUser(p.getUniqueId());
             Group group = api.getGroupManager().getGroup(user.getPrimaryGroup());
 
-            if (group.getName().equals("Owner")) {
+            if (group.getName().equals("owner") || group.getName().equals("admin") || group.getName().equals("srdev")) {
                 if (args.length == 0) {
                     p.sendMessage(plugin.Prefix + MessageManager.getValue("Message.Use").toString().replaceFirst("", ""));
                     return true;
