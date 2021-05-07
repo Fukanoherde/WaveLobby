@@ -138,10 +138,10 @@ public class ScoreboardManager {
                 tmoderator.setPrefix("§3§lT-Mod §8| ");
                 tmoderator.addPlayer(all);
             } else if (all.hasPermission("prefix.srsupporter")) {
-                srsupporter.setPrefix("§1§lSrSupporter §8| ");
+                srsupporter.setPrefix("§1§lSrSupp §8| ");
                 srsupporter.addPlayer(all);
             } else if (all.hasPermission("prefix.supporter")) {
-                supporter.setPrefix("§1§lSupporter §8| ");
+                supporter.setPrefix("§1§lSupp §8| ");
                 supporter.addPlayer(all);
             } else if (all.hasPermission("prefix.t-supporter")) {
                 tsupporter.setPrefix("§1§lT-Supporter §8| ");

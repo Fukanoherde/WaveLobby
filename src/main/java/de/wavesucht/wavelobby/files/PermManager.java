@@ -16,6 +16,7 @@ public class PermManager {
         setValue("Perms.build", "lobby.build");
         setValue("Perms.entity", "lobby.entity");
         setValue("Perms.inventory", "lobby.gm");
+        setValue("Perms.Nick", "lobby.nick");
     }
 
     private static void setValue(String valuePath, String value){

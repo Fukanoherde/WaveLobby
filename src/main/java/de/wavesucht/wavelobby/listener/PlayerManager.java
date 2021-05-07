@@ -96,7 +96,7 @@ public class PlayerManager implements Listener {
         } else {
             p.sendMessage(plugin.Prefix + MessageManager.getValue("Message.NotFoundWarp.Spawn").toString().replaceFirst("&", "§"));
         }
-        p.setGameMode(GameMode.ADVENTURE);
+        p.setGameMode(GameMode.SURVIVAL);
         if (plugin.AllowJoinMessage == true) {
             String join = plugin.JoinMessage;
             join = join.replace("%player%", p.getDisplayName());

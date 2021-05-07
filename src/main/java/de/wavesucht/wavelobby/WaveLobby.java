@@ -6,10 +6,7 @@ Created by LionGaming_95
 
  */
 
-import de.wavesucht.wavelobby.commands.CMD_AllowOP;
-import de.wavesucht.wavelobby.commands.CMD_Build;
-import de.wavesucht.wavelobby.commands.CMD_ChatClear;
-import de.wavesucht.wavelobby.commands.CMD_SetWarp;
+import de.wavesucht.wavelobby.commands.*;
 import de.wavesucht.wavelobby.database.MySQL;
 import de.wavesucht.wavelobby.files.LobbyItems;
 import de.wavesucht.wavelobby.files.MessageManager;
@@ -41,6 +38,7 @@ public class WaveLobby extends JavaPlugin {
     private CMD_ChatClear cc;
     private CMD_Build buildMode;
     private CMD_SetWarp setWarp;
+    private CMD_Nick nick;
 
     // Listener \\
 
@@ -52,6 +50,7 @@ public class WaveLobby extends JavaPlugin {
     private InventoryManager inventoryManager;
     private JumpManager jumpManager;
     private ChatManager chatManager;
+    private GadGetListener gadGetListener;
 
     // gui \\
 
@@ -155,6 +154,7 @@ public class WaveLobby extends JavaPlugin {
         this.inventoryManager = new InventoryManager(this);
         this.jumpManager = new JumpManager(this);
         this.chatManager = new ChatManager(this);
+        this.gadGetListener = new GadGetListener(this);
 
         // gui \\
 
@@ -170,7 +170,7 @@ public class WaveLobby extends JavaPlugin {
 
         // gui Manager \\
 
-        this.banner_manager = new GUI_Banner_Manager(this);
+        this.boots_manager = new GUI_Boots_Manager(this);
         this.banner_manager = new GUI_Banner_Manager(this);
         this.headsManager = new GUI_HeadsManager(this);
         this.heads_manager = new GUI_Heads_Manager(this);
@@ -187,6 +187,7 @@ public class WaveLobby extends JavaPlugin {
         this.cc = new CMD_ChatClear(this);
         this.buildMode = new CMD_Build(this);
         this.setWarp = new CMD_SetWarp(this);
+        this.nick = new CMD_Nick(this);
 
     }
 

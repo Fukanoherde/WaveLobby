@@ -13,3 +13,5 @@ commands:
     description: You change in build mode.
   setwarp:
     description: Set the minigame Warp.
+  nick:
+    description: Change youre displayname.

@@ -16,6 +16,7 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
@@ -37,7 +38,32 @@ public class GUI_Navigator implements Listener {
 
         if (e.getAction() == Action.RIGHT_CLICK_AIR && e.getPlayer().getItemInHand().getType() == Material.COMPASS) {
                 if (e.getPlayer().getGameMode() == GameMode.ADVENTURE) {
-                    final Inventory teleporter = Bukkit.createInventory(null, 54, "§6✪ §3Wo Willst du Hinreisen? §6✪");
+                    final Inventory teleporter = Bukkit.createInventory(null, 27, "§6✪ §3Teleporter §6✪");
+
+                    ItemStack GLASS = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short)15);
+                    ItemMeta GLASSMETA = GLASS.getItemMeta();
+                    GLASSMETA.setDisplayName(" ");
+                    GLASS.setItemMeta(GLASSMETA);
+
+                    teleporter.setItem(0, GLASS);
+                    teleporter.setItem(1, GLASS);
+                    teleporter.setItem(3, GLASS);
+                    teleporter.setItem(4, GLASS);
+                    teleporter.setItem(5, GLASS);
+                    teleporter.setItem(7, GLASS);
+                    teleporter.setItem(8, GLASS);
+                    teleporter.setItem(9, GLASS);
+                    teleporter.setItem(11, GLASS);
+                    teleporter.setItem(15, GLASS);
+                    teleporter.setItem(17, GLASS);
+                    teleporter.setItem(18, GLASS);
+                    teleporter.setItem(19, GLASS);
+                    teleporter.setItem(21, GLASS);
+                    teleporter.setItem(22, GLASS);
+                    teleporter.setItem(23, GLASS);
+                    teleporter.setItem(25, GLASS);
+                    teleporter.setItem(26, GLASS);
+
                     Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
 
                         @Override
@@ -117,7 +143,7 @@ public class GUI_Navigator implements Listener {
     @EventHandler
     public void onNavigatorTeleport(InventoryClickEvent e) {
         if (e.getClickedInventory() != null) {
-            if (e.getView().getTitle().equalsIgnoreCase("§6✪ §3Wo Willst du Hinreisen? §6✪")) {
+            if (e.getView().getTitle().equalsIgnoreCase("§6✪ §3Teleporter §6✪")) {
                 Player p = (Player) e.getWhoClicked();
                 if (e.getCurrentItem() != null) {
                     if (e.getCurrentItem().getType() != Material.AIR) {
@@ -135,7 +161,7 @@ public class GUI_Navigator implements Listener {
                     }
                 }
             }
-            if (e.getView().getTitle().equalsIgnoreCase("§6✪ §3Wo Willst du Hinreisen? §6✪")) {
+            if (e.getView().getTitle().equalsIgnoreCase("§6✪ §3Teleporter §6✪")) {
                 Player p = (Player) e.getWhoClicked();
                 if (e.getCurrentItem() != null) {
                     if (e.getCurrentItem().getType() != Material.AIR) {
@@ -154,7 +180,7 @@ public class GUI_Navigator implements Listener {
                     }
                 }
             }
-            if (e.getView().getTitle().equalsIgnoreCase("§6✪ §3Wo Willst du Hinreisen? §6✪")) {
+            if (e.getView().getTitle().equalsIgnoreCase("§6✪ §3Teleporter §6✪")) {
                 Player p = (Player) e.getWhoClicked();
                 if (e.getCurrentItem() != null) {
                     if (e.getCurrentItem().getType() != Material.AIR) {
@@ -173,7 +199,7 @@ public class GUI_Navigator implements Listener {
                     }
                 }
             }
-            if (e.getView().getTitle().equalsIgnoreCase("§6✪ §3Wo Willst du Hinreisen? §6✪")) {
+            if (e.getView().getTitle().equalsIgnoreCase("§6✪ §3Teleporter §6✪")) {
                 Player p = (Player) e.getWhoClicked();
                 if (e.getCurrentItem() != null) {
                     if (e.getCurrentItem().getType() != Material.AIR) {
@@ -192,7 +218,7 @@ public class GUI_Navigator implements Listener {
                     }
                 }
             }
-            if (e.getView().getTitle().equalsIgnoreCase("§6✪ §3Wo Willst du Hinreisen? §6✪")) {
+            if (e.getView().getTitle().equalsIgnoreCase("§6✪ §3Teleporter §6✪")) {
                 Player p = (Player) e.getWhoClicked();
                 if (e.getCurrentItem() != null) {
                     if (e.getCurrentItem().getType() != Material.AIR) {
@@ -211,7 +237,7 @@ public class GUI_Navigator implements Listener {
                     }
                 }
             }
-            if (e.getView().getTitle().equalsIgnoreCase("§6✪ §3Wo Willst du Hinreisen? §6✪")) {
+            if (e.getView().getTitle().equalsIgnoreCase("§6✪ §3Teleporter §6✪")) {
                 Player p = (Player) e.getWhoClicked();
                 if (e.getCurrentItem() != null) {
                     if (e.getCurrentItem().getType() != Material.AIR) {
@@ -230,7 +256,7 @@ public class GUI_Navigator implements Listener {
                     }
                 }
             }
-            if (e.getView().getTitle().equalsIgnoreCase("§6✪ §3Wo Willst du Hinreisen? §6✪")) {
+            if (e.getView().getTitle().equalsIgnoreCase("§6✪ §3Teleporter §6✪")) {
                 Player p = (Player) e.getWhoClicked();
                 if (e.getCurrentItem() != null) {
                     if (e.getCurrentItem().getType() != Material.AIR) {
@@ -249,7 +275,7 @@ public class GUI_Navigator implements Listener {
                     }
                 }
             }
-            if (e.getView().getTitle().equalsIgnoreCase("§6✪ §3Wo Willst du Hinreisen? §6✪")) {
+            if (e.getView().getTitle().equalsIgnoreCase("§6✪ §3Teleporter §6✪")) {
                 Player p = (Player) e.getWhoClicked();
                 if (e.getCurrentItem() != null) {
                     if (e.getCurrentItem().getType() != Material.AIR) {
@@ -268,7 +294,7 @@ public class GUI_Navigator implements Listener {
                     }
                 }
             }
-            if (e.getView().getTitle().equalsIgnoreCase("§6✪ §3Wo Willst du Hinreisen? §6✪")) {
+            if (e.getView().getTitle().equalsIgnoreCase("§6✪ §3Teleporter §6✪")) {
                 Player p = (Player) e.getWhoClicked();
                 if (e.getCurrentItem() != null) {
                     if (e.getCurrentItem().getType() != Material.AIR) {

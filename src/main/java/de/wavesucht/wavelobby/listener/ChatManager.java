@@ -22,19 +22,26 @@ public class ChatManager implements Listener {
     @EventHandler
     public void onChatPerm(AsyncPlayerChatEvent e) {
         Player p = e.getPlayer();
-
+        if (e.isCancelled()) {
+            return;
+        }
         LuckPerms api = LuckPermsProvider.get();
         User user = api.getUserManager().getUser(p.getUniqueId());
         Group group = api.getGroupManager().getGroup(user.getPrimaryGroup());
 
-        if (e.isCancelled()) {
+        if (group.getName().equals("owner") || group.getName().equals("admin") ||
+                group.getName().equals("srdev") || group.getName().equals("dev")
+                || group.getName().equals("t-dev") ||
+                group.getName().equals("srmod") || group.getName().equals("mod") ||
+                group.getName().equals("t-mod") ||
+                group.getName().equals("srsupporter") || group.getName().equals("supporter") ||
+                group.getName().equals("t-supporter") || group.getName().equals("srbuilder")
+                || group.getName().equals("builder") || group.getName().equals("t-builder")
+                || group.getName().equals("youtuber") || group.getName().equals("premium")) {
             return;
-        }
-        if (group.getName().equals("spieler")) {
+        } else {
             e.setCancelled(true);
             p.sendMessage(plugin.Prefix + "§4Error: §cDu musst mindestens den Premium Rang Haben. Um hier Schreiben zu Können!");
-        } else {
-            return;
         }
     }
     @EventHandler
