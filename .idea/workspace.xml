@@ -9,13 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80b15312-69d3-4ca3-a0b0-26c858336599" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_Banner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_Banner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_Boots.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_Boots.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_Navigator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/gui/GUI_Navigator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/listener/GadGetListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/wavesucht/wavelobby/listener/GadGetListener.java" afterDir="false" />
-    </list>
+    <list default="true" id="80b15312-69d3-4ca3-a0b0-26c858336599" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
