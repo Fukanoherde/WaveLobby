@@ -196,7 +196,7 @@ public class GadGetListener implements Listener {
     public void onSpeedFromGadGet(PlayerInteractEvent e) {
         try {
             if (e.getAction() == Action.RIGHT_CLICK_AIR && e.getPlayer().getItemInHand().getType() == Material.NETHER_STAR) {
-                if (e.getPlayer().getGameMode() != GameMode.CREATIVE) {
+                if (e.getPlayer().getGameMode() == GameMode.SURVIVAL) {
                     if (e.getPlayer().hasPermission("Item.Gui.Gadgets.Perm.Speed")) {
                         Long time = Long.valueOf(System.currentTimeMillis());
                         if (WaveLobby.delay.containsKey(e.getPlayer().getName())) {

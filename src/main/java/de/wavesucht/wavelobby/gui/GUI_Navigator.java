@@ -28,6 +28,7 @@ public class GUI_Navigator implements Listener {
         this.plugin = plugin;
         Bukkit.getPluginManager().registerEvents(this, plugin);
     }
+
     @EventHandler
     public void onNavigator(PlayerInteractEvent e) {
         ItemStack Freunde = new ItemStack(Material.SKULL_ITEM, 1, (short)3);
@@ -37,7 +38,7 @@ public class GUI_Navigator implements Listener {
         Freunde.setItemMeta(FreundeMeta);
 
         if (e.getAction() == Action.RIGHT_CLICK_AIR && e.getPlayer().getItemInHand().getType() == Material.COMPASS) {
-                if (e.getPlayer().getGameMode() == GameMode.ADVENTURE) {
+                if (e.getPlayer().getGameMode() == GameMode.SURVIVAL) {
                     final Inventory teleporter = Bukkit.createInventory(null, 27, "§6✪ §3Teleporter §6✪");
 
                     ItemStack GLASS = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short)15);

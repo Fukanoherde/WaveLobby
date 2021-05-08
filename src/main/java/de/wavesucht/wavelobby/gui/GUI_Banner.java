@@ -13,6 +13,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 public class GUI_Banner implements Listener {
 
@@ -33,8 +35,8 @@ public class GUI_Banner implements Listener {
                     if (!e.getSlotType().equals(InventoryType.SlotType.OUTSIDE)) {
                         if (!e.getCurrentItem().getType().equals(Material.AIR)) {
                             if (e.getCurrentItem().getItemMeta().getDisplayName().equals(LobbyItems.getValue("Item.Gui.Banner").toString().replace("&", "§"))) {
-                                Inventory Banner = Bukkit.createInventory(null, 54, LobbyItems.getValue("Item.Gui.Banner").toString().replace("&", "§"));
 
+                                Inventory Banner = Bukkit.createInventory(null, 54, LobbyItems.getValue("Item.Gui.Banner").toString().replace("&", "§"));
                                 Bukkit.getScheduler().scheduleSyncDelayedTask(WaveLobby.getPlugin(), new Runnable() {
                                     @Override
                                     public void run() {
